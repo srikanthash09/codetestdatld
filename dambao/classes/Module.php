@@ -1055,7 +1055,6 @@ abstract class ModuleCore
 	public static function display($file, $template, $cacheId = NULL, $compileId = NULL)
 	{
 		global $smarty;
-
 		if (Configuration::get('PS_FORCE_SMARTY_2')) /* Keep a backward compatibility for Smarty v2 */
 		{
 			$previousTemplate = $smarty->currentTemplate;

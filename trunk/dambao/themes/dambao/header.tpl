@@ -34,9 +34,21 @@
 		{$HOOK_HEADER}
 	</head>
 	<!--Toppage-->
-	<div id="toppage">
-		{$HOOK_TOPPAGE}
-	</div>
+	 <div id="tophead">
+            <div id="tophead-content">
+                <div id="hotline"></div>
+                <div id="support-online">
+                    <a href="#"><img src="{$img_ps_dir}bg/yahoo-icon.png"></img></a>
+                    <a href="#"><img src="{$img_ps_dir}bg/skype-icon.png"></img></a>
+                    <a href="#"><img src="{$img_ps_dir}bg/down-icon.png"></img></a>
+                </div>
+                <div id="tophead-right">
+                    <a href="#" id="login-button" class="float-left"></a>
+                    <span id="sepe" class="float-left"></span>
+                    <a href="#" id="signup-button" class="float-left"></a>
+                </div>
+            </div> 
+        </div>
 	<body {if $page_name eq '404'}id="pagenotfound"{elseif $page_name}id="{$page_name|escape:'htmlall':'UTF-8'}"{/if}>
 	{if !$content_only}
 		{if isset($restricted_country_mode) && $restricted_country_mode}

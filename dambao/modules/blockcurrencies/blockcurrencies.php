@@ -57,15 +57,15 @@ class BlockCurrencies extends Module
 	*/
 	public function hookTop($params)
 	{
-		if (Configuration::get('PS_CATALOG_MODE'))
-			return ;
-	
-		global $smarty;
-		$currencies = Currency::getCurrencies();
-		if (!sizeof($currencies))
-			return '';
-		$smarty->assign('currencies', $currencies);
-		return $this->display(__FILE__, 'blockcurrencies.tpl');
+//		if (Configuration::get('PS_CATALOG_MODE'))
+//			return ;
+//	
+//		global $smarty;
+//		$currencies = Currency::getCurrencies();
+//		if (!sizeof($currencies))
+//			return '';
+//		$smarty->assign('currencies', $currencies);
+//		return $this->display(__FILE__, 'blockcurrencies.tpl');
 	}
 	
 	public function hookHeader($params)

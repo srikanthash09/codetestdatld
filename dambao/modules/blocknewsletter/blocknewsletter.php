@@ -32,7 +32,7 @@ class Blocknewsletter extends Module
  	
  	public function install()
  	{
- 	 	if (parent::install() == false OR $this->registerHook('leftColumn') == false OR $this->registerHook('footer') == false)
+ 	 	if (parent::install() == false OR $this->registerHook('footer') == false)
  	 		return false;
  	 	return Db::getInstance()->Execute('
 		CREATE TABLE IF NOT EXISTS '._DB_PREFIX_.'newsletter (

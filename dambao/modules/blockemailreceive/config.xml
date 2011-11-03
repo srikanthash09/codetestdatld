@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>blockemailreceive</name>
+	<displayName><![CDATA[Block Email Receive]]></displayName>
+	<version><![CDATA[1.0]]></version>
+	<description><![CDATA[Form đăng k&yacute; nhận mail khuyến mại.]]></description>
+	<author><![CDATA[liempro88]]></author>
+	<tab><![CDATA[blockemailreceive]]></tab>
+	<is_configurable>0</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>

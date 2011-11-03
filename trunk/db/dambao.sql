@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-11-02 09:22:56
+Date: 2011-11-03 14:28:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1617,7 +1617,7 @@ INSERT INTO `ps_configuration` VALUES ('147', 'MB_LOCAL_METHODS', '2', '2011-10-
 INSERT INTO `ps_configuration` VALUES ('148', 'MB_INTER_METHODS', '5', '2011-10-21 17:10:16', '2011-10-21 17:10:16');
 INSERT INTO `ps_configuration` VALUES ('149', 'BANK_WIRE_CURRENCIES', '2,1', '2011-10-21 17:10:16', '2011-10-21 17:10:16');
 INSERT INTO `ps_configuration` VALUES ('150', 'CHEQUE_CURRENCIES', '2,1', '2011-10-21 17:10:16', '2011-10-21 17:10:16');
-INSERT INTO `ps_configuration` VALUES ('151', 'PRODUCTS_VIEWED_NBR', '2', '2011-10-21 17:10:16', '2011-10-21 17:10:16');
+INSERT INTO `ps_configuration` VALUES ('151', 'PRODUCTS_VIEWED_NBR', '5', '2011-10-21 17:10:16', '2011-11-02 16:38:42');
 INSERT INTO `ps_configuration` VALUES ('152', 'BLOCK_CATEG_DHTML', '1', '2011-10-21 17:10:16', '2011-10-21 17:41:25');
 INSERT INTO `ps_configuration` VALUES ('153', 'BLOCK_CATEG_MAX_DEPTH', '3', '2011-10-21 17:10:16', '2011-10-21 17:41:25');
 INSERT INTO `ps_configuration` VALUES ('154', 'MANUFACTURER_DISPLAY_FORM', '1', '2011-10-21 17:10:16', '2011-10-21 17:10:16');
@@ -1651,10 +1651,10 @@ INSERT INTO `ps_configuration` VALUES ('181', 'PS_SHOP_NAME', 'Siêu thị trự
 INSERT INTO `ps_configuration` VALUES ('182', 'PS_SHOP_EMAIL', 'datld88@gmail.com', '2011-10-21 17:11:25', '2011-10-21 17:11:25');
 INSERT INTO `ps_configuration` VALUES ('183', 'PS_MAIL_METHOD', '1', '2011-10-21 17:11:25', '2011-10-21 17:11:25');
 INSERT INTO `ps_configuration` VALUES ('184', 'PS_SHOP_ACTIVITY', '0', '2011-10-21 17:11:25', '2011-10-21 17:11:25');
-INSERT INTO `ps_configuration` VALUES ('185', 'BLOCKADVERT_IMG_EXT', 'jpg', '2011-10-21 17:11:48', '2011-11-01 16:08:55');
-INSERT INTO `ps_configuration` VALUES ('186', 'PS_LAST_VERSION', 'a:8:{s:4:\"name\";s:13:\"1.4.5.1 final\";s:3:\"num\";s:7:\"1.4.5.1\";s:4:\"link\";s:57:\"http://www.prestashop.com/download/prestashop_1.4.5.1.zip\";s:3:\"md5\";s:32:\"3d19305d728f7e8a19f81f9f326b9383\";s:11:\"autoupgrade\";i:1;s:18:\"autoupgrade_module\";i:1;s:9:\"changelog\";s:0:\"\";s:4:\"desc\";s:0:\"\";}', '2011-10-21 17:12:57', '2011-11-01 09:03:09');
-INSERT INTO `ps_configuration` VALUES ('187', 'PS_LAST_VERSION_CHECK', '1320112989', '2011-10-21 17:12:57', '2011-11-01 09:03:09');
-INSERT INTO `ps_configuration` VALUES ('188', 'PS_PREACTIVATION_PAYPAL_WARNING', '', '2011-10-21 17:12:59', '2011-11-01 16:00:12');
+INSERT INTO `ps_configuration` VALUES ('185', 'BLOCKADVERT_IMG_EXT', 'jpg', '2011-10-21 17:11:48', '2011-11-03 14:24:00');
+INSERT INTO `ps_configuration` VALUES ('186', 'PS_LAST_VERSION', 'a:8:{s:4:\"name\";s:13:\"1.4.5.1 final\";s:3:\"num\";s:7:\"1.4.5.1\";s:4:\"link\";s:57:\"http://www.prestashop.com/download/prestashop_1.4.5.1.zip\";s:3:\"md5\";s:32:\"3d19305d728f7e8a19f81f9f326b9383\";s:11:\"autoupgrade\";i:1;s:18:\"autoupgrade_module\";i:1;s:9:\"changelog\";s:0:\"\";s:4:\"desc\";s:0:\"\";}', '2011-10-21 17:12:57', '2011-11-02 15:53:29');
+INSERT INTO `ps_configuration` VALUES ('187', 'PS_LAST_VERSION_CHECK', '1320224009', '2011-10-21 17:12:57', '2011-11-02 15:53:29');
+INSERT INTO `ps_configuration` VALUES ('188', 'PS_PREACTIVATION_PAYPAL_WARNING', '', '2011-10-21 17:12:59', '2011-11-03 13:47:44');
 INSERT INTO `ps_configuration` VALUES ('189', 'TS_TAB1_ENV_API', 'production', '2011-10-21 17:18:05', '2011-10-21 17:18:05');
 INSERT INTO `ps_configuration` VALUES ('190', 'blocksocial_facebook', '', '2011-10-21 17:33:33', '2011-10-21 17:33:33');
 INSERT INTO `ps_configuration` VALUES ('191', 'blocksocial_twitter', '', '2011-10-21 17:33:33', '2011-10-21 17:33:33');
@@ -1677,10 +1677,10 @@ INSERT INTO `ps_configuration` VALUES ('207', 'PS_LOGO_MAIL', '', '2011-10-26 17
 INSERT INTO `ps_configuration` VALUES ('208', 'PS_LOGO_INVOICE', '', '2011-10-26 17:26:46', '2011-10-26 17:26:46');
 INSERT INTO `ps_configuration` VALUES ('209', 'PS_FAVICON', '', '2011-10-26 17:26:46', '2011-10-26 17:26:46');
 INSERT INTO `ps_configuration` VALUES ('210', 'PS_STORES_ICON', '', '2011-10-26 17:26:46', '2011-10-26 17:26:46');
-INSERT INTO `ps_configuration` VALUES ('211', 'PS_SHOW_TYPE_MODULES_1', 'allModules', '2011-10-28 10:05:26', '2011-10-28 11:15:49');
-INSERT INTO `ps_configuration` VALUES ('212', 'PS_SHOW_COUNTRY_MODULES_1', '0', '2011-10-28 10:05:26', '2011-10-28 11:15:49');
-INSERT INTO `ps_configuration` VALUES ('213', 'PS_SHOW_INSTALLED_MODULES_1', 'installedUninstalled', '2011-10-28 10:05:26', '2011-10-28 11:15:49');
-INSERT INTO `ps_configuration` VALUES ('214', 'PS_SHOW_ENABLED_MODULES_1', 'enabledDisabled', '2011-10-28 10:05:26', '2011-10-28 11:15:49');
+INSERT INTO `ps_configuration` VALUES ('211', 'PS_SHOW_TYPE_MODULES_1', 'allModules', '2011-10-28 10:05:26', '2011-11-03 11:42:46');
+INSERT INTO `ps_configuration` VALUES ('212', 'PS_SHOW_COUNTRY_MODULES_1', '0', '2011-10-28 10:05:26', '2011-11-03 11:42:46');
+INSERT INTO `ps_configuration` VALUES ('213', 'PS_SHOW_INSTALLED_MODULES_1', 'installedUninstalled', '2011-10-28 10:05:26', '2011-11-03 11:42:46');
+INSERT INTO `ps_configuration` VALUES ('214', 'PS_SHOW_ENABLED_MODULES_1', 'enabledDisabled', '2011-10-28 10:05:26', '2011-11-03 11:42:46');
 
 -- ----------------------------
 -- Table structure for `ps_configuration_lang`
@@ -1738,7 +1738,7 @@ CREATE TABLE `ps_connections` (
   KEY `id_guest` (`id_guest`),
   KEY `date_add` (`date_add`),
   KEY `id_page` (`id_page`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ps_connections
@@ -1765,6 +1765,12 @@ INSERT INTO `ps_connections` VALUES ('19', '4', '1', '2130706433', '2011-11-01 1
 INSERT INTO `ps_connections` VALUES ('20', '4', '1', '2130706433', '2011-11-01 15:22:55', '');
 INSERT INTO `ps_connections` VALUES ('21', '6', '1', '2130706433', '2011-11-01 15:27:12', '');
 INSERT INTO `ps_connections` VALUES ('22', '4', '1', '2130706433', '2011-11-01 15:59:51', '');
+INSERT INTO `ps_connections` VALUES ('23', '4', '1', '2130706433', '2011-11-02 09:41:25', '');
+INSERT INTO `ps_connections` VALUES ('24', '4', '1', '2130706433', '2011-11-02 15:51:50', '');
+INSERT INTO `ps_connections` VALUES ('25', '6', '1', '2130706433', '2011-11-02 16:46:31', '');
+INSERT INTO `ps_connections` VALUES ('26', '4', '14', '2130706433', '2011-11-02 17:27:16', '');
+INSERT INTO `ps_connections` VALUES ('27', '6', '1', '2130706433', '2011-11-03 08:45:29', '');
+INSERT INTO `ps_connections` VALUES ('28', '4', '1', '2130706433', '2011-11-03 08:46:06', '');
 
 -- ----------------------------
 -- Table structure for `ps_connections_page`
@@ -3690,7 +3696,7 @@ CREATE TABLE `ps_customer` (
 -- Records of ps_customer
 -- ----------------------------
 INSERT INTO `ps_customer` VALUES ('1', '1', '1', 'John', 'DOE', 'pub@prestashop.com', '97c6134384a1cf40f126a5fc73cfa421', '2011-10-21 17:10:16', '1970-01-15', '1', null, null, '1', '47ce86627c1f3c792a80773c5d2deaf8', null, '1', '0', '0', '2011-10-21 17:10:16', '2011-10-21 17:10:16');
-INSERT INTO `ps_customer` VALUES ('2', '1', '1', 'liem', 'bui thanh', 'liem04@gmail.com', '3c96228dc56973c55b64d80df54eeadb', '2011-10-28 02:46:37', '1985-03-13', '0', null, null, '0', '6418a090112bec5971e34a30afb209ae', null, '1', '0', '0', '2011-10-28 08:46:37', '2011-10-28 08:46:37');
+INSERT INTO `ps_customer` VALUES ('2', '1', '1', 'liem', 'bui thanh', 'liem04@gmail.com', '3c96228dc56973c55b64d80df54eeadb', '2011-10-28 02:46:37', '1985-03-13', '1', '127.0.0.1', '2011-11-03 11:55:02', '0', '6418a090112bec5971e34a30afb209ae', null, '1', '0', '0', '2011-10-28 08:46:37', '2011-10-28 08:46:37');
 
 -- ----------------------------
 -- Table structure for `ps_customer_group`
@@ -4391,7 +4397,7 @@ CREATE TABLE `ps_hook` (
   `live_edit` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_hook`),
   UNIQUE KEY `hook_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ps_hook
@@ -4482,6 +4488,7 @@ INSERT INTO `ps_hook` VALUES ('93', 'afterDeleteAttribute', 'On deleting attribu
 INSERT INTO `ps_hook` VALUES ('94', 'afterSaveAttribute', 'On saving attribute feature value', 'On saving attribute feature value', '0', '0');
 INSERT INTO `ps_hook` VALUES ('95', 'myAccountBlock', 'My account block', 'Display extra informations inside the \"my account\" block', '1', '0');
 INSERT INTO `ps_hook` VALUES ('96', 'myAccountBlockfooter', 'My account block', 'Display extra informations inside the \"my account\" block', '1', '0');
+INSERT INTO `ps_hook` VALUES ('97', 'viewed', 'viewed', null, '1', '0');
 
 -- ----------------------------
 -- Table structure for `ps_hook_module`
@@ -4504,39 +4511,35 @@ INSERT INTO `ps_hook_module` VALUES ('3', '4', '1');
 INSERT INTO `ps_hook_module` VALUES ('4', '1', '3');
 INSERT INTO `ps_hook_module` VALUES ('4', '4', '3');
 INSERT INTO `ps_hook_module` VALUES ('5', '8', '1');
-INSERT INTO `ps_hook_module` VALUES ('5', '9', '4');
+INSERT INTO `ps_hook_module` VALUES ('5', '9', '3');
 INSERT INTO `ps_hook_module` VALUES ('6', '1', '2');
 INSERT INTO `ps_hook_module` VALUES ('6', '4', '2');
-INSERT INTO `ps_hook_module` VALUES ('7', '7', '7');
-INSERT INTO `ps_hook_module` VALUES ('7', '9', '11');
+INSERT INTO `ps_hook_module` VALUES ('7', '7', '6');
+INSERT INTO `ps_hook_module` VALUES ('7', '9', '10');
 INSERT INTO `ps_hook_module` VALUES ('10', '7', '3');
-INSERT INTO `ps_hook_module` VALUES ('10', '9', '5');
+INSERT INTO `ps_hook_module` VALUES ('10', '9', '4');
 INSERT INTO `ps_hook_module` VALUES ('10', '60', '1');
 INSERT INTO `ps_hook_module` VALUES ('10', '61', '1');
 INSERT INTO `ps_hook_module` VALUES ('10', '62', '1');
 INSERT INTO `ps_hook_module` VALUES ('10', '66', '1');
 INSERT INTO `ps_hook_module` VALUES ('11', '14', '2');
-INSERT INTO `ps_hook_module` VALUES ('12', '7', '6');
-INSERT INTO `ps_hook_module` VALUES ('12', '9', '10');
-INSERT INTO `ps_hook_module` VALUES ('12', '21', '3');
+INSERT INTO `ps_hook_module` VALUES ('12', '7', '5');
+INSERT INTO `ps_hook_module` VALUES ('12', '9', '9');
 INSERT INTO `ps_hook_module` VALUES ('13', '14', '1');
-INSERT INTO `ps_hook_module` VALUES ('14', '7', '5');
-INSERT INTO `ps_hook_module` VALUES ('14', '9', '9');
+INSERT INTO `ps_hook_module` VALUES ('14', '7', '4');
+INSERT INTO `ps_hook_module` VALUES ('14', '9', '8');
 INSERT INTO `ps_hook_module` VALUES ('15', '7', '1');
-INSERT INTO `ps_hook_module` VALUES ('15', '9', '3');
-INSERT INTO `ps_hook_module` VALUES ('16', '9', '7');
-INSERT INTO `ps_hook_module` VALUES ('17', '7', '8');
+INSERT INTO `ps_hook_module` VALUES ('15', '9', '2');
+INSERT INTO `ps_hook_module` VALUES ('16', '9', '6');
+INSERT INTO `ps_hook_module` VALUES ('17', '7', '7');
 INSERT INTO `ps_hook_module` VALUES ('17', '9', '1');
 INSERT INTO `ps_hook_module` VALUES ('19', '14', '4');
-INSERT INTO `ps_hook_module` VALUES ('20', '9', '6');
+INSERT INTO `ps_hook_module` VALUES ('20', '9', '5');
 INSERT INTO `ps_hook_module` VALUES ('21', '7', '2');
-INSERT INTO `ps_hook_module` VALUES ('21', '9', '12');
-INSERT INTO `ps_hook_module` VALUES ('22', '9', '8');
+INSERT INTO `ps_hook_module` VALUES ('21', '9', '11');
+INSERT INTO `ps_hook_module` VALUES ('22', '9', '7');
 INSERT INTO `ps_hook_module` VALUES ('22', '14', '5');
-INSERT INTO `ps_hook_module` VALUES ('24', '7', '4');
-INSERT INTO `ps_hook_module` VALUES ('24', '9', '2');
 INSERT INTO `ps_hook_module` VALUES ('25', '11', '1');
-INSERT INTO `ps_hook_module` VALUES ('25', '21', '4');
 INSERT INTO `ps_hook_module` VALUES ('25', '25', '1');
 INSERT INTO `ps_hook_module` VALUES ('26', '32', '1');
 INSERT INTO `ps_hook_module` VALUES ('27', '32', '2');
@@ -4568,20 +4571,21 @@ INSERT INTO `ps_hook_module` VALUES ('51', '32', '19');
 INSERT INTO `ps_hook_module` VALUES ('51', '45', '1');
 INSERT INTO `ps_hook_module` VALUES ('52', '32', '20');
 INSERT INTO `ps_hook_module` VALUES ('53', '32', '21');
-INSERT INTO `ps_hook_module` VALUES ('54', '9', '13');
+INSERT INTO `ps_hook_module` VALUES ('54', '9', '12');
 INSERT INTO `ps_hook_module` VALUES ('55', '32', '22');
-INSERT INTO `ps_hook_module` VALUES ('56', '21', '1');
-INSERT INTO `ps_hook_module` VALUES ('57', '21', '2');
-INSERT INTO `ps_hook_module` VALUES ('58', '21', '5');
-INSERT INTO `ps_hook_module` VALUES ('59', '21', '6');
 INSERT INTO `ps_hook_module` VALUES ('61', '40', '1');
 INSERT INTO `ps_hook_module` VALUES ('62', '14', '6');
-INSERT INTO `ps_hook_module` VALUES ('64', '9', '14');
+INSERT INTO `ps_hook_module` VALUES ('64', '9', '13');
 INSERT INTO `ps_hook_module` VALUES ('64', '14', '3');
-INSERT INTO `ps_hook_module` VALUES ('65', '9', '15');
+INSERT INTO `ps_hook_module` VALUES ('65', '9', '14');
 INSERT INTO `ps_hook_module` VALUES ('65', '19', '1');
 INSERT INTO `ps_hook_module` VALUES ('68', '8', '2');
 INSERT INTO `ps_hook_module` VALUES ('69', '8', '3');
+INSERT INTO `ps_hook_module` VALUES ('70', '97', '1');
+INSERT INTO `ps_hook_module` VALUES ('72', '21', '3');
+INSERT INTO `ps_hook_module` VALUES ('73', '21', '1');
+INSERT INTO `ps_hook_module` VALUES ('74', '9', '15');
+INSERT INTO `ps_hook_module` VALUES ('74', '21', '2');
 
 -- ----------------------------
 -- Table structure for `ps_hook_module_exceptions`
@@ -5333,7 +5337,7 @@ CREATE TABLE `ps_module` (
   `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_module`),
   KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ps_module
@@ -5357,7 +5361,6 @@ INSERT INTO `ps_module` VALUES ('19', 'blocksearch', '1');
 INSERT INTO `ps_module` VALUES ('20', 'blockspecials', '1');
 INSERT INTO `ps_module` VALUES ('21', 'blocktags', '1');
 INSERT INTO `ps_module` VALUES ('22', 'blockuserinfo', '1');
-INSERT INTO `ps_module` VALUES ('24', 'blockviewed', '1');
 INSERT INTO `ps_module` VALUES ('25', 'statsdata', '1');
 INSERT INTO `ps_module` VALUES ('26', 'statsvisits', '1');
 INSERT INTO `ps_module` VALUES ('27', 'statssales', '1');
@@ -5399,6 +5402,11 @@ INSERT INTO `ps_module` VALUES ('64', 'blockpermanentlinks2', '1');
 INSERT INTO `ps_module` VALUES ('65', 'blockbestsellers2', '1');
 INSERT INTO `ps_module` VALUES ('68', 'blocknewestproducts', '1');
 INSERT INTO `ps_module` VALUES ('69', 'blocknewproductcatagories', '1');
+INSERT INTO `ps_module` VALUES ('70', 'blockviewed', '1');
+INSERT INTO `ps_module` VALUES ('71', 'blockemailreceive', '1');
+INSERT INTO `ps_module` VALUES ('72', 'blocksociallink', '1');
+INSERT INTO `ps_module` VALUES ('73', 'blockfooterlogo', '1');
+INSERT INTO `ps_module` VALUES ('74', 'blocknewsletter', '1');
 
 -- ----------------------------
 -- Table structure for `ps_module_country`
@@ -5559,6 +5567,25 @@ CREATE TABLE `ps_module_group` (
 INSERT INTO `ps_module_group` VALUES ('3', '1');
 INSERT INTO `ps_module_group` VALUES ('4', '1');
 INSERT INTO `ps_module_group` VALUES ('6', '1');
+
+-- ----------------------------
+-- Table structure for `ps_newsletter`
+-- ----------------------------
+DROP TABLE IF EXISTS `ps_newsletter`;
+CREATE TABLE `ps_newsletter` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `newsletter_date_add` datetime DEFAULT NULL,
+  `ip_registration_newsletter` varchar(15) NOT NULL,
+  `http_referer` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of ps_newsletter
+-- ----------------------------
+INSERT INTO `ps_newsletter` VALUES ('1', 'liempro88@gmail.com', '2011-11-03 11:48:51', '127.0.0.1', '');
+INSERT INTO `ps_newsletter` VALUES ('2', 'liembk88@gmail.com', '2011-11-03 13:53:02', '127.0.0.1', '');
 
 -- ----------------------------
 -- Table structure for `ps_operating_system`
@@ -6037,7 +6064,7 @@ CREATE TABLE `ps_page` (
   PRIMARY KEY (`id_page`),
   KEY `id_page_type` (`id_page_type`),
   KEY `id_object` (`id_object`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of ps_page
@@ -6059,6 +6086,7 @@ INSERT INTO `ps_page` VALUES ('14', '1', '9');
 INSERT INTO `ps_page` VALUES ('15', '1', '5');
 INSERT INTO `ps_page` VALUES ('16', '1', '10');
 INSERT INTO `ps_page` VALUES ('17', '1', '11');
+INSERT INTO `ps_page` VALUES ('18', '1', '8');
 
 -- ----------------------------
 -- Table structure for `ps_pagenotfound`

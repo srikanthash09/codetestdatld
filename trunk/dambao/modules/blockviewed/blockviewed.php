@@ -52,7 +52,7 @@ class BlockViewed extends Module
 		if (!parent::install()
 			OR !$this->registerHook('leftColumn')
 			OR !$this->registerHook('header')
-			OR !Configuration::updateValue('PRODUCTS_VIEWED_NBR', 2))
+			OR !Configuration::updateValue('PRODUCTS_VIEWED_NBR', 5))
 			return false;
 		return true;
 	}
@@ -96,15 +96,14 @@ class BlockViewed extends Module
 		global $link, $smarty, $cookie;
 
 		$id_product = (int)(Tools::getValue('id_product'));
-		$productsViewed = (isset($params['cookie']->viewed) AND !empty($params['cookie']->viewed)) ? array_slice(explode(',', $params['cookie']->viewed), 0, Configuration::get('PRODUCTS_VIEWED_NBR')) : array();
-
+		$productsViewed = (isset($params['cookie']->viewed) AND !empty($params['cookie']->viewed)) ? array_slice(explode(',', $params['cookie']->viewed), 0, 5) : array();
 		if (sizeof($productsViewed))
 		{
 			$defaultCover = Language::getIsoById($params['cookie']->id_lang).'-default';
 
 			$productIds = implode(',', $productsViewed);
 			$productsImages = Db::getInstance(_PS_USE_SQL_SLAVE_)->ExecuteS('
-			SELECT i.id_image, p.id_product, il.legend, p.active, pl.name, pl.description_short, pl.link_rewrite, cl.link_rewrite AS category_rewrite
+			SELECT i.id_image, p.id_product, il.legend,p.price, p.active, pl.name, pl.description_short, pl.link_rewrite, cl.link_rewrite AS category_rewrite
 			FROM '._DB_PREFIX_.'product p
 			LEFT JOIN '._DB_PREFIX_.'product_lang pl ON (pl.id_product = p.id_product)
 			LEFT JOIN '._DB_PREFIX_.'image i ON (i.id_product = p.id_product AND i.cover = 1)
@@ -114,7 +113,7 @@ class BlockViewed extends Module
 			AND pl.id_lang = '.(int)($params['cookie']->id_lang).'
 			AND cl.id_lang = '.(int)($params['cookie']->id_lang)
 			);
-
+                        
 			$productsImagesArray = array();
 			foreach ($productsImages AS $pi)
 				$productsImagesArray[$pi['id_product']] = $pi;
@@ -134,7 +133,7 @@ class BlockViewed extends Module
 					$obj->description_short = $productsImagesArray[$productViewed]['description_short'];
 					$obj->link_rewrite = $productsImagesArray[$productViewed]['link_rewrite'];
 					$obj->category_rewrite = $productsImagesArray[$productViewed]['category_rewrite'];
-
+                                        $obj->price=$productsImagesArray[$productViewed]['price'];
 					if (!isset($obj->cover) || !$productsImagesArray[$productViewed]['id_image'])
 					{
 						$obj->cover = $defaultCover;
@@ -167,11 +166,10 @@ class BlockViewed extends Module
 
 			if (!sizeof($productsViewedObj))
 				return ;
-
+                        
 			$smarty->assign(array(
 				'productsViewedObj' => $productsViewedObj,
 				'mediumSize' => Image::getSize('medium')));
-
 			return $this->display(__FILE__, 'blockviewed.tpl');
 		}
 		elseif ($id_product)
@@ -188,4 +186,7 @@ class BlockViewed extends Module
 	{
 		Tools::addCSS(($this->_path).'blockviewed.css', 'all');
 	}
+        function hookViewed($params){
+            return $this->hookRightColumn($params);
+        }
 }

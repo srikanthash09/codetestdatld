@@ -1770,3 +1770,133 @@ img{
 #products_block_center .product_image{
     margin-top: 20px;
 }
+#viewed-products_block{
+    border: 1px solid #e4e8f1;
+    height: 242px;
+    background: #f6f7f9;
+}
+#viewed_title{
+    height: 40px;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+    line-height: 40px;
+    color:black;
+}
+#viewed-products_block ul{
+    height: 204px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+#viewed-products_block ul li{
+    padding: 0;
+    width:183px;
+    height: 184px;
+}
+#viewed-products_block ul li{
+    margin-left: 10px;
+    background: #fff;
+    float:left;
+    color:#000;
+}
+#viewed-products_block .last_item{
+    margin-right: 0px;
+    width: 185px;
+}
+#viewed-products_block ul li a{
+    color:black;
+}
+#viewed-products_block ul li img{
+    margin: 10px 10px 0 10px;
+}
+#viewed-products_block .text_desc h5 a{
+    text-decoration: none;
+    color:#1362b7 !important;
+    font-size: 11px;
+    font-family: Arial;
+    margin: auto;
+    text-align: center;
+}
+#viewed-products_block .text_desc p{
+
+    color:#ce0809 !important;
+    font-size: 11px;
+    font-family: Arial;
+    margin: auto;
+    text-align: center;
+}
+#block_footer{
+    background: url("../img/bg_footer.png") repeat-x top #fff;
+    height: 535px;
+}
+#footer-logo{
+    height:74px;
+     background: url("../img/bg_footerlogo.png") no-repeat center 1px;
+}
+#emailreceive{
+    height: 120px;
+    width: 320px;
+    float: left;
+    margin-left: 40px;
+    background: #fff;
+}
+#emailreceive .block_email_receive{
+    height: 110px;
+    width: 310px;
+    margin: 3px;
+    border: 2px solid #ececec;
+}
+#blocksociallink{
+    height: 120px;
+    width: 590px;
+    float: left;
+    margin-left: 10px;
+    background: #fff;
+}
+#blocksociallink .block_social{
+    height: 110px;
+    width:  580px;
+    margin: 3px;
+    border: 2px solid #ececec;
+}
+#emailreceive_title{
+    background: url("../img/receiveemail-icon.png") no-repeat left;
+    height: 39px;
+    margin-top: 17px;
+    margin-left: 18px;
+}
+#emailreceive_title span{
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    color: black;
+    line-height: 24px;
+    margin-left: 50px;
+}
+#receivemailform{
+    height: 25px;
+    width: 272px;
+    margin-top: 8px;
+    margin-left: 23px;
+
+}
+#receivemailform .email{
+    float:left;
+    height: 13px;
+    width: 198px;
+    border: 1px solid #d7d7d7;
+    -moz-border-radius: 4px 4px 4px 4px;
+    border-radius:4px 4px 4px 4px;
+    background-color: #ececec;
+    padding:5px;
+}
+#receivemailform .submit{
+    float:left;
+    margin-left: 8px;
+    width: 54px;
+    height: 25px;
+    background: url("../img/bg_submitemail.png") no-repeat;
+    border: 0 none;
+    cursor: pointer;
+}

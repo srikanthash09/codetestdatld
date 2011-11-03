@@ -505,6 +505,7 @@ class FrontControllerCore
 		self::$smarty->assign(array(
 			'HOOK_RIGHT_COLUMN' => Module::hookExec('rightColumn', array('cart' => self::$cart)),
 			'HOOK_FOOTER' => Module::hookExec('footer'),
+                        'HOOK_VIEWED' => Module::hookExec('viewed'),
 			'content_only' => (int)(Tools::getValue('content_only'))));
 		self::$smarty->display(_PS_THEME_DIR_.'footer.tpl');
 		//live edit

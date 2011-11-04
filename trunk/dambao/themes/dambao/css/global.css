@@ -1866,6 +1866,7 @@ img{
     width:  580px;
     margin: 3px;
     border: 2px solid #ececec;
+    background: url("../img/bg-buyingguide.png") no-repeat 165px 14px;
 }
 #emailreceive_title{
     background: url("../img/receiveemail-icon.png") no-repeat left;
@@ -1890,13 +1891,12 @@ img{
 }
 #receivemailform .email{
     float:left;
-    height: 13px;
     width: 198px;
     border: 1px solid #d7d7d7;
-    -moz-border-radius: 4px 4px 4px 4px;
-    border-radius:4px 4px 4px 4px;
+    -moz-border-radius: 3px;
+    border-radius:3px;
     background-color: #ececec;
-    padding:5px;
+    padding: 5px;
 }
 #receivemailform .submit{
     float:left;
@@ -1906,4 +1906,35 @@ img{
     background: url("../img/bg_submitemail.png") no-repeat;
     border: 0 none;
     cursor: pointer;
+}
+
+#buying-guide{
+    display: block;
+    width: 145px;
+    color:black;
+    padding-top:10px;
+    padding-left: 18px;
+    padding-bottom: 30px;
+    float:left;
+}
+#buying-guide .buying-guide-title{
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #333;
+    line-height: 20px;
+}
+#buying-guide .buying-guide-des{
+    font-size: 11px;
+    font-family: Arial;
+    color: #747679;
+}
+#buying-guide a{
+    line-height: 40px;
+    color: #cd0000;
+}
+#social-link{
+    width: 150px;
+    margin-left: 255px;
+    float:left;
 }

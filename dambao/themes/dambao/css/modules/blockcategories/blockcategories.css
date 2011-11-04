@@ -1,19 +1,18 @@
-#categories_block_left  li {border-bottom:1px dotted #ccc}
-	#categories_block_left  li.last {	border:none;}
-		#categories_block_left  li a {
-			display:block;
-			padding:7px 11px 5px 22px;
-			color:#333;
-			background:url(../../../img/arrow_right_2.png) no-repeat 10px 10px transparent
-		}
-		
-	#categories_block_left  li ul {margin-left:40px}
-		#categories_block_left  li ul li {border:none}
-			#categories_block_left  li ul li a {
-				padding-left:0;
-				background:none
-			}
-		
+#categories_block_left  li {border-bottom:1px solid #f6f7f9}
+#categories_block_left  li.last {	border:none;}
+#categories_block_left  li a {
+	display:block;
+	color:#333;
+}
+#categories_block_left  li a.over {
+	background: url(../../../img/ho_category.png) no-repeat transparent
+}
+#categories_block_left  li ul li {border:none}
+#categories_block_left  li ul li a {
+	padding-left:0;
+	background: #fff;
+	border: 1px solid #F6F7F9
+}		
 #categories_block_left li .OPEN,
 #categories_block_left li .CLOSE {
 	display:block;

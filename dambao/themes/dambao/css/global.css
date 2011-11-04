@@ -254,15 +254,19 @@ table.table_block  td {
 .block {margin-bottom:20px}
 #footer .block {margin-bottom:0}
 	.block h4 {
-		padding:6px 11px;
+	        border: 1px solid #f6f7f9;
+		padding:8px 11px;
 		font-size:12px;
-		color:#fff;
-		text-shadow:0 1px 0 #000;
-		text-transform:uppercase;
-		background:#383838
+		color:#333;
+		font-weight: bold;
+		background: url(../img/bg_left.png) repeat-x;
 	}
-		.block h4 a {color:#fff}
-	.block ul {list-style-type:none}
+	 .block .block_content{
+	    border: 1px solid #f6f7f9;
+	    border-top: none
+	 }
+	 .block h4 a {color:#333}
+	 .block ul {list-style-type:none}
 		.block li.last {	border:none}
 			.block li a {
 				display:block;
@@ -504,8 +508,11 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 }
 
 #header_right {
-	position:relative;
-   float: right
+      position:relative;
+      float: right;
+      background: url(../img/bg_search_main.png) repeat-x;
+      border-radius: 5px;
+      width: 100%
 }
 
 
@@ -1700,7 +1707,7 @@ img{
 #tophead{
     height: 59px;
     width: 100%;
-    background: url("../img/bg-topheader.png");
+    background: url("../img/bg_top.png") repeat-x;
 }
 #tophead-content{
     position: relative;

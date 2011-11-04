@@ -24,14 +24,20 @@ class BlockNewProductCatagories extends Module {
     }
 
     function hookHome($params) {
+        $number_categorydisplay=3;
         global $smarty;
         $categories=Category::getHomeCategories((int)($params['cookie']->id_lang),true);
-        foreach ($categories as $cate){
+        shuffle($categories);
+        for($i=0;$i<$number_categorydisplay;$i++){
+            $categorydisplay[]=$categories[$i];
+        }
+        foreach ($categorydisplay as $cate){
             $category = new Category($cate[id_category], Configuration::get('PS_LANG_DEFAULT'));
             $nb = (int)(Configuration::get('HOME_FEATURED_NBR'));
             $products[$cate[id_category]] = $category->getProducts((int)($params['cookie']->id_lang), 1,10,null,null,false,true,true,3);
+            $n++;
         }
-        $smarty->assign(array('products' => $products,'categories'=>$categories));
+        $smarty->assign(array('products' => $products,'categories'=>$categorydisplay));
         return $this->display(__FILE__, 'blocknewproductcatagories.tpl');
     }
 

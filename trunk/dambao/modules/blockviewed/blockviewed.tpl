@@ -28,6 +28,7 @@
 <div id="viewed-products_block_left" class="block products_block">
 	<h4>{l s='Viewed products' mod='blockviewed'}</h4>
 	<div class="block_content">
+            <div id="swap">
 		<ul class="products clearfix">
 			{foreach from=$productsViewedObj item=viewedProduct name=myLoop}
 				<li class="clearfix{if $smarty.foreach.myLoop.last} last_item{elseif $smarty.foreach.myLoop.first} first_item{else} item{/if}">
@@ -37,5 +38,6 @@
 				</li>
 			{/foreach}
 		</ul>
+            </div>
 	</div>
 </div>

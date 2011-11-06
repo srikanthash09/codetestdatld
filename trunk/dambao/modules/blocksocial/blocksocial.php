@@ -44,7 +44,7 @@ class blocksocial extends Module
 	
 	public function install()
 	{
-		return (parent::install() AND Configuration::updateValue('blocksocial_facebook', '') AND Configuration::updateValue('blocksocial_twitter', '') AND Configuration::updateValue('blocksocial_rss', '') AND $this->registerHook('header'));
+		return (parent::install() AND Configuration::updateValue('blocksocial_facebook', '') AND Configuration::updateValue('blocksocial_twitter', '')  AND $this->registerHook('footer'));
 	}
 	
 	public function uninstall()

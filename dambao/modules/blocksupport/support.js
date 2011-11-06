@@ -2,12 +2,16 @@ $(document).ready(function(){
     $('li#down').toggle(function(){
         $('#support_list').css('display','block');
         $(this).addClass('lg_show');
-        return false;
     },function(){
         $('#support_list').css('display','none');
         $(this).removeClass('lg_show');
-        return false;
-    });        
+    });    
+    $('body').click(function(){
+        if($('li#down').hasClass('lg_show')){
+            $('#support_list').css('display','none');
+            $(this).removeClass('lg_show');
+        }    
+    })        
     //select all the a tag with name equal to modal
 	$('a[name=modal]').click(function(e) {
 		//Cancel the link behavior

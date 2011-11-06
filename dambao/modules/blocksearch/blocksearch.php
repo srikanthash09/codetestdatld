@@ -88,7 +88,8 @@ class BlockSearch extends Module
 		$smarty->assign('ajaxsearch', $ajaxSearch);
 
 		$instantSearch = (int)(Configuration::get('PS_INSTANT_SEARCH'));
-		$smarty->assign('instantsearch', $instantSearch);
+		$smarty->assign(array('instantsearch'=> $instantSearch,'order_process' => Configuration::get('PS_ORDER_PROCESS_TYPE') ? 'order-opc' : 'order'));
+                
 		if ($ajaxSearch)
 		{
 			Tools::addCSS(_PS_CSS_DIR_.'jquery.autocomplete.css');

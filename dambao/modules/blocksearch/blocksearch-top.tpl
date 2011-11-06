@@ -11,7 +11,13 @@
 			</div>
 			<div id="formsearch">
 				<input class="search_query" type="text" id="search_query_top" name="search_query" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" />
-				<input type="submit" name="submit_search" value="{l s='Search' mod='blocksearch'}" class="button" />
+				<input type="submit" name="submit_search" value="{l s='Search' mod='blocksearch'}" id="submit"/>
+			</div>
+			<div id="shopping-cart">
+				<a href="{$link->getPageLink("$order_process.php", true)}" title="{l s='Your Shopping Cart' mod='blocksearch'}">
+					<img src="{$base_dir}img/cart_top.png"/>
+					<span class="ajax_cart_quantity">Có {$cart_qties} Sản phẩm</span>
+				</a>				
 			</div>
 	</p>
 	</form>

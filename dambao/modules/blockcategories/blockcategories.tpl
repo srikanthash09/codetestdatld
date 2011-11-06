@@ -12,11 +12,11 @@ $(document).ready(function() {
     <ul class="block_content" id="navmenu-v">
       {foreach from=$blockCategTree.children item=child name=blockCategTree}
       {if $smarty.foreach.blockCategTree.last}
-      {include file=$branche_tpl_path node=$child last='true'}
+      {include file=$branche_tpl_path node=$child products=$products last='true'}
       {else}
-      {include file=$branche_tpl_path node=$child}
+      {include file=$branche_tpl_path node=$child products=$products}
       {/if}
       {/foreach}
-    </ul>
+    </ul>    
 </div>
 <!-- /Block categories module -->

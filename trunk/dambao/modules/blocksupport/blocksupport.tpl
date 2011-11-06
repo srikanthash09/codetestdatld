@@ -6,9 +6,9 @@
 <div id="support-online">
         <p id="support">Hỗ trợ trực tuyến:</p>
         <ul>            
-            <li><a href="#"><img src="{$img_ps_dir}bg/yahoo-icon.png"></img></a></li>
-            <li><a href="#"><img src="{$img_ps_dir}bg/skype-icon.png"></img></a></li>
-            <li id="down"><a href="#"><img src="{$img_ps_dir}bg/down-icon.png"></img></a>
+            <li id="yahoo"><a id="icon" href="#"><span></span></a></li>
+            <li id="skype"><a id="icon" href="#"><span></span></a></li>
+            <li id="down"><a id="icon" href="#"><span></span></a>
                 <div id="support_list">
                     <div id="su_box_top">
                         <div id="su_box_mid">

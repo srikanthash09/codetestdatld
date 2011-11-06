@@ -254,7 +254,6 @@ table.table_block  td {
 .block {margin-bottom:20px}
 #footer .block {margin-bottom:0}
 	.block h4 {
-    border: 1px solid #f6f7f9;
 		padding:8px 11px;
 		font-size:12px;
 		color:#333;
@@ -2100,6 +2099,7 @@ img{
 }
 .sociallink-linkblock{
     list-style-type: none;
+    margin-top: 5px;
 }
 #blocklistparnner .left{
     height: 50px;
@@ -2187,4 +2187,58 @@ img{
 }
 #aboutme .guide{
     width: 328px;
+}
+#special_block_right{
+    position: relative;
+    padding-bottom: 20px;
+}
+#special_block_right h4 a{
+    color: #ce0809;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+}
+#reductionprice{
+    text-align: center;
+    margin-left: 40px;
+}
+#reductionprice .pri{
+    font-family: Arial;
+    font-size: 12px;
+}
+#reductionprice .price{
+    font-family: Arial;
+    font-size: 12px;
+}
+#reductionprice .price-discount{
+    color:#ce0809;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+}
+#percentreduction{
+    font-family: Arial;
+    font-size: 12px;
+}
+#tags_block_left .title{
+    background: url("../img/bg_tag_title.png") repeat-x top!important;
+}
+#tags_block_left{
+    padding-bottom: 20px;
+    position: relative;
+    border: 1px solid #F6F7F9;
+}
+#tags_block_left .tag_img{
+    height: 41px;
+    width: 33px;
+    position: absolute;
+    top:-4px;
+    left: 10px;
+    background: url("../img/tag.png")no-repeat top center;
+}
+#tags_block_left a{
+    color:#1362b7;
+    font-family: Arial;
+    font-size: 12px;
+    
 }

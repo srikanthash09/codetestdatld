@@ -26,7 +26,7 @@ class BlockNewestProducts extends Module {
     function hookHome($params) {
         global $smarty;
         $products =  Product::getNewProducts((int)($params['cookie']->id_lang),0,5);
-        $smarty->assign(array('products' => $products));
+        $smarty->assign(array('products' => $products,'homeSize' => Image::getSize('home')));
         return $this->display(__FILE__, 'blocknewestproducts.tpl');
     }
 

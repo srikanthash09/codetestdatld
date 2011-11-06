@@ -1,7 +1,7 @@
 <!--liempro88-->
 {foreach from=$categories item=category}
 <div class="block products_block clearfix" id="products_block_center">
-	<div id="block_title"><span>{strtoupper($category.name)}</span></div>
+	<div id="block_title"><span>{$category.name}</span></div>
 			<div class="block_content_catagory">	
 			<ul style="height: 238px;">
                             {foreach from=$products.{$category.id_category} item=product}

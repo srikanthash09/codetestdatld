@@ -150,6 +150,12 @@ class BlockCategories extends Module
 				$resultIds[$row['id_category']] = &$row;
 			} 
 			$blockCategTree = $this->getTree($resultParents, $resultIds, Configuration::get('BLOCK_CATEG_MAX_DEPTH'));
+                        $categories=Category::getHomeCategories((int)($params['cookie']->id_lang),true);
+                        foreach ($categories as $cate){
+                            $category = new Category($cate[id_category], Configuration::get('PS_LANG_DEFAULT'));
+                            $products[$cate[id_category]] = $category->getProducts((int)($params['cookie']->id_lang), 1,4,null,null,false,true);
+                        }      
+                        $smarty->assign(array('products' => $products,'categories'=>$categories));
 			unset($resultParents);
 			unset($resultIds);
 			$isDhtml = (Configuration::get('BLOCK_CATEG_DHTML') == 1 ? true : false);

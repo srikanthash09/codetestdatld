@@ -23,30 +23,55 @@
 }
 #search_block_top #formsearch{
 	float: left;
-	padding: 7px 25px;
+	padding: 5px 20px 5px 23px;
 }
 #search_block_top p {padding:0;}
 #search_block_top #search_query_top {
 	padding:0 5px;
-	height:31px;
+	height:33px;
 	width:545px;/* 555 */
 	border:1px solid #666;
-	border-right:1px solid #fff !important;
-	border-radius:6px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
+	border-right:none;
+	border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	-webkit-border-radius: 6px 0 0 6px;
 	color:#666;
 	background:url(../../../img/bg_search_input.png) repeat-x 0 0 #fff;
 }
 
-#search_block_top .button {
+#search_block_top #submit {
 	border:none;
 	border-radius:0;
 	color:#fff;
 	text-transform:uppercase;
-	background:url(../../../img/bg_search_submit.png) repeat-x 0 0 #101010;
+	width: 45px;
+	height: 34px;
+	text-indent: -9999px;
+	background:url(../../../img/bu_search.png) no-repeat ;
 }
-
+#shopping-cart{
+	float: left
+}
+#shopping-cart a{
+	display: block;
+	text-decoration: none;
+	font: bold 12px Arial;
+	color: #fff;
+	line-height: 31px;
+	width: 145px;
+	height: 31px;
+	margin-top: 6px;
+	border: 1px solid #f7941e;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding-left: 20px;
+	background: url(../../../img/bg_search_top.png) repeat-x
+}
+#shopping-cart a img{
+	vertical-align: middle;
+	margin-bottom: 5px
+}
 /*\*//*/div.madiv {
 #search_block_top .button {top: 5px;} /* hack ie 8 */
 }/* */

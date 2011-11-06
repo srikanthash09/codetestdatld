@@ -2,7 +2,7 @@
 <div class="block products_block clearfix" id="featured-products_block_center">
 	<div id="block_title"><span>SẢN PHẨM MỚI NHẤT</span></div>
 
-			<div class="block_content">	
+			<div class="block_content_product">	
 			<ul style="height: 194px;">
                           {foreach from=$products item=product}
                             <li class="ajax_block_product item">

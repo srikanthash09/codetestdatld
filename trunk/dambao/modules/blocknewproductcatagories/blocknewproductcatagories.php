@@ -37,7 +37,7 @@ class BlockNewProductCatagories extends Module {
             $products[$cate[id_category]] = $category->getProducts((int)($params['cookie']->id_lang), 1,10,null,null,false,true,true,3);
             $n++;
         }
-        $smarty->assign(array('products' => $products,'categories'=>$categorydisplay));
+        $smarty->assign(array('products' => $products,'categories'=>$categorydisplay,'homeSize' => Image::getSize('home')));
         return $this->display(__FILE__, 'blocknewproductcatagories.tpl');
     }
 

@@ -26,7 +26,7 @@
 
 <!-- MODULE Home Block best sellers -->
 <div id="best-sellers_block_center" class="block products_block">
-	<h4>{l s='Top sellers' mod='blockbestsellers'}</h4>
+	<h4>{l s='SẢN PHẨM BÁN CHẠY' mod='blockbestsellers'}</h4>
 	{if isset($best_sellers) AND $best_sellers}
 		<div class="block_content">
 			{assign var='liHeight' value=320}

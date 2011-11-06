@@ -1,10 +1,13 @@
- 
+ #block_slider{	
+    margin: 15px 0;
+    overflow: hidden
+ }
 /* The Nivo Slider styles */
 div#slide_holder {
-	clear: both;
-    height: 250px;
-    margin: 0 0 10px;
-    width: 490px;
+	float: left;
+	clear:both;
+    height: 240px;
+    width: 480px;
     padding: 4px;
     border: 1px solid #f6f7f9
 }
@@ -114,4 +117,9 @@ div#slider {
 
 .nivo-controlNav a.active {
 	font-weight:bold;
+}
+#qc_right_top{
+	float: left;
+	margin-left: 15px;
+	width: 300px
 }

@@ -1,6 +1,7 @@
 {literal}
 <script type="text/javascript" src="{/literal}{$this_path}{literal}js/jquery.nivo.slider.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="{/literal}{$this_path}{literal}css/nivo-slider.css" />
+<div id="block_slider">
         <!-- SLIDER ---------------------------------------------------------------------------------------------------------------------------------------> 
 <div id="slide_holder"> 	
     <div id="slider">
@@ -43,3 +44,7 @@ $(window).load(function() {
 <!-- SLIDER --------------------------------------------------------------------------------------------------------------------------------------->
 
 {/literal}
+    <div id="qc_right_top">
+	<img src="{$base_dir}img/qc/qc_right_home.jpg" width="300" height="250" />
+    </div>
+</div>

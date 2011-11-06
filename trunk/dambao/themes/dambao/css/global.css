@@ -262,7 +262,7 @@ table.table_block  td {
 		background: url(../img/bg_left.png) repeat-x;
 	}
 	 .block .block_content{
-    border: 1px solid #f6f7f9;
+    
 	    border-top: none
 	 }
 	 .block h4 a {color:#333}
@@ -525,10 +525,7 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 /* ************************************************************************************************
       FOOTER
 ************************************************************************************************ */
-#footer {
-    color:#fff;
-    background:#333
-}
+
 .blockcategories_footer,
 #footer .myaccount ,
 #block_various_links_footer,
@@ -551,7 +548,7 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 #footer a {color:#fff}
 #footer a:hover {text-decoration:underline}
 #footer ul {list-style-type:none}
-#footer li {padding:7px 0}
+
 #footer li a {color:#fff}
 
 
@@ -2039,7 +2036,6 @@ img{
 }
 #receivemailform .email{
     float:left;
-    height: 13px;
     width: 198px;
     border: 1px solid #d7d7d7;
     border-radius:4px 4px 4px 4px;
@@ -2149,6 +2145,7 @@ img{
     width: 100%;
 }
 #aboutme .topaboutme{
+    height: 129px;
     width: 920px;
     margin-left: 40px;
     margin-top: 42px;

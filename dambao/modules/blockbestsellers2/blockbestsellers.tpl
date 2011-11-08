@@ -2,7 +2,7 @@
 <!-- MODULE Block best sellers -->
 <div id="best-sellers_block_right" class="block products_block">
 	<h4><a href="{$link->getPageLink('best-sales.php')}">{l s='SẢN PHẨM BÁN CHẠY' mod='blockbestsellers'}</a></h4>
-	<div class="block_content">
+	<div class="block_content_bestsellers">
 	{if $best_sellers|@count > 0}
 		<ul class="product_images">
 		{foreach from=$best_sellers item=product name=myLoop}

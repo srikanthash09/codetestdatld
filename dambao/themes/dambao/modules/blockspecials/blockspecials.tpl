@@ -3,7 +3,7 @@
 <!-- MODULE Block specials -->
 <div id="special_block_right" class="block products_block exclusive blockspecials">
 	<h4><a href="{$link->getPageLink('prices-drop.php')}" title="{l s='GIẢM GIÁ' mod='blockspecials'}">{l s='GIẢM GIÁ' mod='blockspecials'}</a></h4>
-	<div class="block_content">
+	<div class="block_content_specials">
 
 {if $special}
 		<ul class="products clearfix">

@@ -16,12 +16,11 @@
 	background:none
 }
 #special_block_right li.product_image {
-	margin-top: 20px;
-        margin-left: 20px;
+	margin: 40px 0 0 20px
 }
 
 #special_block_right .products span.price-discount {
-	font-size:14px;
+	font: 12px Arial;
 	text-decoration:line-through;
         margin:auto;
         text-align:center;
@@ -32,7 +31,7 @@
         height: 71px;
         width: 66px;
         position: absolute;
-        top: 0;
+        top: 3px;
         right: -5px;
 	padding:0 0 0 10px;
 	font-weight:bold;
@@ -44,8 +43,6 @@
     position: absolute;
     top:26px;
     left: 10px;
-    font: Arial;
-    font-size: 18px;
-    font-weight: bold;
+    font: bold 18px Arial;
     color:white;
 }

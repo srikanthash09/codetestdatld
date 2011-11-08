@@ -1,9 +1,9 @@
 
 <!-- Block tags module -->
 <div id="tags_block_left" class="block tags_block">
-	<div class="title" style="height:32px; width: 100%;"></div>
+	<div class="title"></div>
         <div class="tag_img"></div>
-	<p class="block_content">
+	<p class="block_content_tags">
 {if $tags}
 	{foreach from=$tags item=tag name=myLoop}
 		<a href="{$link->getPageLink('search.php')}?tag={$tag.name|urlencode}" title="{l s='More about' mod='blocktags'} {$tag.name|escape:html:'UTF-8'}" class="{$tag.class} {if $smarty.foreach.myLoop.last}last_item{elseif $smarty.foreach.myLoop.first}first_item{else}item{/if}">{$tag.name|escape:html:'UTF-8'}</a>

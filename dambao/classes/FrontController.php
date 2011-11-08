@@ -477,6 +477,7 @@ class FrontControllerCore
 		self::$smarty->assign(array(
 			'HOOK_HEADER' => Module::hookExec('header'),
 			'HOOK_TOP' => Module::hookExec('top'),
+                        'HOOK_SUPPORT' => Module::hookExec('support'),
                         'HOOK_TOPPAGE' => Module::hookExec('toppage')
 		));
 

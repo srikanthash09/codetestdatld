@@ -9,7 +9,7 @@
 			<li class="{if $smarty.foreach.myLoop.first}first_item{elseif $smarty.foreach.myLoop.last}last_item{else}item{/if} clearfix">
 				<a href="{$product.link}" title="{$product.legend|escape:'htmlall':'UTF-8'}" class="content_img clearfix">
 					
-					<img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'large')}" height="150" width="150" alt="{$product.legend|escape:'htmlall':'UTF-8'}" />
+					<img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home')}" height="{$homeSize.height}" width="{$homeSize.width}" alt="{$product.legend|escape:'htmlall':'UTF-8'}" />
 				
 				</a>
 				<p><a href="{$product.link}" title="{$product.legend|escape:'htmlall':'UTF-8'}">

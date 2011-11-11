@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('body').click(function(){
         if($('li#down').hasClass('lg_show')){
             $('#support_list').css('display','none');
-            $(this).removeClass('lg_show');
+            $('li#down').removeClass('lg_show');
         }    
     })        
     //select all the a tag with name equal to modal

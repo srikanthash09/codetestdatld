@@ -2,7 +2,7 @@
 #best-sellers_block_right ul {margin-bottom:5px}
 #best-sellers_block_right li {
 	float:none;
-	padding:10px 0;
+	padding:10px 0 20px 0;
 	border-bottom:1px dotted #e4e8f1
 }
 #best-sellers_block_right li.last_item {border:none}
@@ -24,17 +24,16 @@
 	text-align:center
 }
 #best-sellers_block_right li img {
-	margin-left: 14px;
+	margin-left: 20px;
 }
 #best-sellers_block_right li p {
 	float:left;
 	text-align: center;
-	width:150px;
-        font-family: Arial;
-	font-size:11px
-        display:bock;
-        padding:0;
-        margin-left:14px;
+	width:120px;
+    font-family: Arial;
+	font-size:11px;
+    display:block;
+    padding:0 24px;
 }
 #best-sellers_block_right li p a{
     line-height: 16px;
@@ -42,10 +41,9 @@
     text-decoration: none;
 }
 #best-sellers_block_right li .price {
-	font-weight:bold;
-	font-size:14px;
-	color:#990000;
-        margin-top: 10px;
+    font: 11px Arial; 
+	color:#ce0809;
+    margin-top: 10px;
 
 }
 

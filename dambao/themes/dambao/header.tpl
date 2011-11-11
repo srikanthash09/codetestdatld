@@ -36,17 +36,7 @@
 	<!--Toppage-->
 	 <div id="tophead">
             <div id="tophead-content">
-                <div id="hotline"></div>
-                <div id="support-online">
-                    <a href="#"><img src="{$img_ps_dir}bg/yahoo-icon.png"></img></a>
-                    <a href="#"><img src="{$img_ps_dir}bg/skype-icon.png"></img></a>
-                    <a href="#"><img src="{$img_ps_dir}bg/down-icon.png"></img></a>
-                </div>
-                <div id="tophead-right">
-                    <a href="#" id="login-button" class="float-left"></a>
-                    <span id="sepe" class="float-left"></span>
-                    <a href="#" id="signup-button" class="float-left"></a>
-                </div>
+                {$HOOK_SUPPORT}                
             </div> 
         </div>
 	<body {if $page_name eq '404'}id="pagenotfound"{elseif $page_name}id="{$page_name|escape:'htmlall':'UTF-8'}"{/if}>
@@ -61,6 +51,9 @@
 			<div id="header" class="grid_9 alpha omega">
 				<a id="header_logo" href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
 					<img class="logo" src="{$img_ps_dir}logo.jpg?{$img_update_time}" alt="{$shop_name|escape:'htmlall':'UTF-8'}" {if $logo_image_width}width="{$logo_image_width}"{/if} {if $logo_image_height}height="{$logo_image_height}" {/if} />
+				</a>
+				<a id="header_logo" href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
+					<img class="logo" src="{$img_ps_dir}quangcao.jpg" width="600" height="90" />
 				</a>
 				<div id="header_right" class="grid_6 omega">
 					{$HOOK_TOP}

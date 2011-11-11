@@ -499,6 +499,7 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 #header {position:relative}
 #header_logo {
 	float:left;
+	margin-bottom: 3px;
 	display:block
 }
 
@@ -2213,14 +2214,12 @@ img{
     font-size: 12px;
 }
 #reductionprice .price{
-    font-family: Arial;
-    font-size: 12px;
+    font: bold 12px Arial;
+    color: #ce0809;
 }
 #reductionprice .price-discount{
-    color:#ce0809;
-    font-size: 12px;
-    font-family: Arial;
-    font-weight: bold;
+    color:#000;
+    font: bold 12px Arial
 }
 #percentreduction{
     font-family: Arial;

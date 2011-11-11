@@ -17,10 +17,10 @@
                         <div id="su_con_top"><p>Nhân viên kinh doanh</p></div>
                         <div id="su_con_list">
                             <div id="su_per">
-                                <a href="ymsgr:sendim?dambao_1"><span>Nguyễn Đức Thiện</span><img src="http://opi.yahoo.com/online?u=dambao_1&m=g&t=1"/></a><a href="skype:dambao_1?chat"><img src="{$base_dir}img/su_skype.png"/></a>
+                                <a href="ymsgr:sendim?dambao_1"><span>Nguyễn Đức Thiện</span><img src="http://opi.yahoo.com/online?u=dambao_1&m=g&t=1"/></a><a href="skype:dambao_1?chat"><img src="{$base_dir}img/su_skype.png" width="23" height="20"/></a>
                             </div>
                             <div id="su_per">
-                                <a href="ymsgr:sendim?dambao_2"><span>Lê Đăng Thắng</span><img src="http://opi.yahoo.com/online?u=dambao_2&m=g&t=1"/></a><a href="skype:dambao_2?chat"><img src="{$base_dir}img/su_skype.png"/></a>
+                                <a href="ymsgr:sendim?dambao_2"><span>Lê Đăng Thắng</span><img src="http://opi.yahoo.com/online?u=dambao_2&m=g&t=1"/></a><a href="skype:dambao_2?chat"><img src="{$base_dir}img/su_skype.png" width="23" height="20"/></a>
                             </div>
                         </div>
                     </div>
@@ -28,10 +28,10 @@
                         <div id="su_con_top"><p>Chăm sóc khách hàng</p></div>
                         <div id="su_con_list">
                             <div id="su_per">
-                                <a href="ymsgr:sendim?dambao_3"><span>Đào Chí Nguyên</span><img  src="http://opi.yahoo.com/online?u=dambao_3&m=g&t=1"/></a><a href="skype:dambao_3?chat"><img src="{$base_dir}img/su_skype.png"/></a>
+                                <a href="ymsgr:sendim?dambao_3"><span>Đào Chí Nguyên</span><img  src="http://opi.yahoo.com/online?u=dambao_3&m=g&t=1"/></a><a href="skype:dambao_3?chat"><img src="{$base_dir}img/su_skype.png" width="23" height="20"/></a>
                             </div>
                             <div id="su_per">
-                                <a href="ymsgr:sendim?dambao_4"><span>Nguyễn Trần Khuê</span><img  src="http://opi.yahoo.com/online?u=dambao_4&m=g&t=1"/></a><a href="skype:dambao_4?chat"><img src="{$base_dir}img/su_skype.png"/></a>
+                                <a href="ymsgr:sendim?dambao_4"><span>Nguyễn Trần Khuê</span><img  src="http://opi.yahoo.com/online?u=dambao_4&m=g&t=1"/></a><a href="skype:dambao_4?chat"><img src="{$base_dir}img/su_skype.png" width="23" height="20"/></a>
                             </div>
                         </div>
                     </div>

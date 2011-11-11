@@ -8,9 +8,9 @@
         <div id="social-link">
             <span class="sociallink-title">Theo dõi</span><br />
 
-            <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/facebook-icon.png"></img></a></span><br/>
-                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/twitter-icon.png"></img></a></span><br/>
-                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/youtube-icon.png"></img></a></span>
+            <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/facebook-icon.png" width="67" height="16" /></a></span><br/>
+                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/twitter-icon.png" width="67" height="16" /></a></span><br/>
+                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/youtube-icon.png" width="67" height="16" /></a></span>
 
         </div>
     </div>

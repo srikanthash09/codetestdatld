@@ -99,6 +99,10 @@ class BlockBestSellers2 extends Module
 	{
 		return $this->hookRightColumn($params);
 	}
+    public function hookCategoryleft($params)
+	{
+		return $this->hookRightColumn($params);
+	}
 
 	public function hookHeader($params)
 	{

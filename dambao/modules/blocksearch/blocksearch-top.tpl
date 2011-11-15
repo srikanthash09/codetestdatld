@@ -6,7 +6,7 @@
 			<label for="search_query_top"><!-- image on background --></label>
 			<input type="hidden" name="orderby" value="position" />
 			<input type="hidden" name="orderway" value="desc" />
-			<div class="CategoriesTitle"><span class="title_cat"><a href="http://nhanh.vn/danh-muc">DANH MỤC SẢN PHẨM</a></span>
+			<div class="CategoriesTitle"><span class="title_cat"><a href="http://dambao.vn/danh-muc">DANH MỤC SẢN PHẨM</a></span>
 				<a class="catdown" href="javascript:void(0);"></a>
 			</div>
 			<div id="formsearch">

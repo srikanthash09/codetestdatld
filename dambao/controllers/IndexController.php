@@ -22,5 +22,6 @@ class IndexControllerCore extends FrontController
 	{
 		parent::displayContent();
 		self::$smarty->display(_PS_THEME_DIR_.'index.tpl');
+        self::$smarty->display(_PS_THEME_DIR_.'category.tpl');
 	}
 }

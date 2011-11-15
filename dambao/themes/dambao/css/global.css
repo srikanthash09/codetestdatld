@@ -516,11 +516,33 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
       BREADCRUMB
 ************************************************************************************************ */
 .breadcrumb {
-	margin-bottom:20px;
-	font-size:12px
+	background: url(../img/brea_mid.png) left -13px repeat-x;
+    height: 34px;
+    position: relative;
+}
+.breadcrumb #brea_left{
+    float: left;
+    background: url(../img/brea_left.png) left -13px no-repeat;
+    width: 10px;
+    height: 34px
+}
+.breadcrumb #brea_right{
+    float: left;
+    background: url(../img/brea_right.png) right -13px no-repeat;
+    width: 10px;
+    position: absolute;
+    right: 0px;
+    height: 34px
+}
+.breadcrumb ul{
+    float: left;
+    width: 90%;
+    font: bold 12px Arial;
+    color: #f7941e; 
+    margin-top: 10px;
+    overflow: hidden
 }
 .breadcrumb .navigation-pipe {margin:0 3px 0 5px}
-
 
 /* ************************************************************************************************
       FOOTER

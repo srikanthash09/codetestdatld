@@ -841,13 +841,13 @@ class ToolsCore
 				foreach ($categories AS $category)
 				{
 					$fullPath .=
-					(($n < $nCategories OR $linkOntheLastItem) ? '<a href="'.self::safeOutput($link->getCategoryLink((int)$category['id_category'], $category['link_rewrite'])).'" title="'.htmlentities($category['name'], ENT_NOQUOTES, 'UTF-8').'">' : '').
+					(($n < $nCategories OR $linkOntheLastItem) ? '<li><a href="'.self::safeOutput($link->getCategoryLink((int)$category['id_category'], $category['link_rewrite'])).'" title="'.htmlentities($category['name'], ENT_NOQUOTES, 'UTF-8').'">' : '').
 					htmlentities($category['name'], ENT_NOQUOTES, 'UTF-8').
-					(($n < $nCategories OR $linkOntheLastItem) ? '</a>' : '').
-					(($n++ != $nCategories OR !empty($path)) ? '<span class="navigation-pipe">'.$pipe.'</span>' : '');
+					(($n < $nCategories OR $linkOntheLastItem) ? '</a></li>' : '').
+					(($n++ != $nCategories OR !empty($path)) ? '<li><span>' : '');
 				}
 
-				return $fullPath.$path;
+				return $fullPath.$path.'</span></li>';
 			}
 		}
 		elseif ($categoryType === 'CMS')

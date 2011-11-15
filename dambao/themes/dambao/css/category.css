@@ -33,23 +33,27 @@ h1 {display:none;}
 /* ************************************************************************************************
       SUB CATEGORIES
 ************************************************************************************************ */
-#subcategories {margin-top:15px}
-#subcategories h3 {
-	padding:14px 12px;
-	font-size:13px;
-	color:#fff;
-	text-transform:uppercase;
-	text-shadow:0 1px 0 #666;
-	background:url(../img/bg_table_th.png) repeat-x 0 0 #999
+#subcategories {
+    margin-top:20px;
+    border: 1px solid #e4e8f1
+}
+#subcategories h3,#cate_home h3 {
+    background: url(../img/bg_subca.png) repeat-x;
+    height: 28px;
+    font: bold 12px Arial;
+    line-height: 28px;
+    color: #0c5db5;
+    padding-left: 32px;
+    padding-bottom: 0
 }
 
 .inline_list {
 	list-style-type:none;
-	margin-top:10px;
 }
 .inline_list  li {
-	padding:10px 0;
-	border-bottom:1px dotted #ccc
+    background:  url(../img/list_ca.png) 10px center no-repeat;
+    padding: 5px 0 5px 19px;
+	border-bottom:1px solid #f6f7f9
 }
 .inline_list  li .img {
 	float:left;
@@ -59,6 +63,6 @@ h1 {display:none;}
 	border:1px solid #ccc
 }
 .inline_list  li .cat_name {
-	font-weight:bold;
-	font-weight:13px
+    font: 12px Arial;
+    color: #0c5db5
 }

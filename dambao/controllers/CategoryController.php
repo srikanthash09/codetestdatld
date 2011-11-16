@@ -151,8 +151,7 @@ class CategoryControllerCore extends FrontController
 	{
 		parent::displayContent();
         parent::process();
-		self::$smarty->assign(array('HOOK_CATEGORY_LEFT'=> Module::hookExec('categoryleft'),
-        ));
+		self::$smarty->assign(array('HOOK_CATEGORY_LEFT'=> Module::hookExec('categoryleft'),'HOOK_HOME_CATEGORY'=>Module::hookExec('homecategory')));
 		self::$smarty->display(_PS_THEME_DIR_.'category.tpl');
 	}
 }

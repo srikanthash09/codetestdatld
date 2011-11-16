@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>blocknewproduct</name>
+	<displayName><![CDATA[Block New Product]]></displayName>
+	<version><![CDATA[1]]></version>
+	<description><![CDATA[Module lấy sản phẩm mới khi vao trang danh mục cấp 1.]]></description>
+	<author><![CDATA[liempro88]]></author>
+	<tab><![CDATA[blocknewproduct]]></tab>
+	<is_configurable>0</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

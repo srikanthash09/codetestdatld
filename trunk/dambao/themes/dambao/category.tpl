@@ -18,7 +18,11 @@
     		</div>
             {$HOOK_LEFT_COLUMN}
         </div>
+        
         <div id="cate_home" class=" grid_5">
+            <div id="home_category">
+                {$HOOK_HOME_CATEGORY}
+            </div>
             {if $products}    			
     			{include file="$tpl_dir./product-list.tpl" products=$products}
     		{elseif !isset($subcategories)}

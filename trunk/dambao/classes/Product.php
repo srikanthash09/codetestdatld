@@ -1433,7 +1433,6 @@ class ProductCore extends ObjectModel
 	{
         $currentDate = date('Y-m-d H:i:s');
 		$ids_product = self::_getProductIdByDate((!$beginning ? $currentDate : $beginning), (!$ending ? $currentDate : $ending));
-
 		$groups = FrontController::getCurrentCustomerGroups();
 		$sqlGroups = (count($groups) ? 'IN ('.implode(',', $groups).')' : '= 1');
 
@@ -1455,7 +1454,18 @@ class ProductCore extends ObjectModel
 
 		if (!$id_product)
 			return false;
-
+                $sql='SELECT p.*, pl.`description`, pl.`description_short`, pl.`link_rewrite`, pl.`meta_description`, pl.`meta_keywords`, pl.`meta_title`, pl.`name`, p.`ean13`,  p.`upc`,
+			i.`id_image`, il.`legend`, t.`rate`
+		FROM `'._DB_PREFIX_.'product` p
+		LEFT JOIN `'._DB_PREFIX_.'product_lang` pl ON (p.`id_product` = pl.`id_product` AND pl.`id_lang` = '.(int)($id_lang).')
+		LEFT JOIN `'._DB_PREFIX_.'image` i ON (i.`id_product` = p.`id_product` AND i.`cover` = 1)
+		LEFT JOIN `'._DB_PREFIX_.'image_lang` il ON (i.`id_image` = il.`id_image` AND il.`id_lang` = '.(int)($id_lang).')
+		LEFT JOIN `'._DB_PREFIX_.'tax_rule` tr ON (p.`id_tax_rules_group` = tr.`id_tax_rules_group`
+													AND tr.`id_country` = '.(int)Country::getDefaultCountryId().'
+													AND tr.`id_state` = 0)
+		LEFT JOIN `'._DB_PREFIX_.'tax` t ON (t.`id_tax` = tr.`id_tax`)
+		WHERE p.id_product = '.(int)$id_product;
+                
 		$row = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow('
 		SELECT p.*, pl.`description`, pl.`description_short`, pl.`link_rewrite`, pl.`meta_description`, pl.`meta_keywords`, pl.`meta_title`, pl.`name`, p.`ean13`,  p.`upc`,
 			i.`id_image`, il.`legend`, t.`rate`
@@ -1470,6 +1480,41 @@ class ProductCore extends ObjectModel
 		WHERE p.id_product = '.(int)$id_product);
 
 		return Product::getProductProperties($id_lang, $row);
+	}
+        
+        public static function getRandomSpecialCategory($categoryid,$id_lang, $beginning = false, $ending = false)
+	{
+             $category = new Category($categoryid, Configuration::get('PS_LANG_DEFAULT'));
+             $subcategories=$category->getSubCategories($id_lang);
+             $subcategoryidArr=array();
+             foreach($subcategories as $subcategory){
+                 $subcategoryidArr[]=$subcategory['id_category'];
+             }
+             $subcategoryidArr[]=$categoryid;
+             $cateid=implode(', ', $subcategoryidArr);
+
+            $currentDate = date('Y-m-d H:i:s');
+		$ids_product = self::_getProductIdByDate((!$beginning ? $currentDate : $beginning), (!$ending ? $currentDate : $ending));
+		$groups = FrontController::getCurrentCustomerGroups();
+		$sqlGroups = (count($groups) ? 'IN ('.implode(',', $groups).')' : '= 1');
+
+                $sql='SELECT p.*, pl.`description`, pl.`description_short`, pl.`link_rewrite`, pl.`meta_description`, pl.`meta_keywords`, pl.`meta_title`, pl.`name`, p.`ean13`,  p.`upc`,
+			i.`id_image`, il.`legend`, t.`rate`
+		FROM `'._DB_PREFIX_.'product` p
+		LEFT JOIN `'._DB_PREFIX_.'product_lang` pl ON (p.`id_product` = pl.`id_product` AND pl.`id_lang` = '.(int)($id_lang).')
+		LEFT JOIN `'._DB_PREFIX_.'image` i ON (i.`id_product` = p.`id_product` AND i.`cover` = 1)
+		LEFT JOIN `'._DB_PREFIX_.'image_lang` il ON (i.`id_image` = il.`id_image` AND il.`id_lang` = '.(int)($id_lang).')
+		LEFT JOIN `'._DB_PREFIX_.'tax_rule` tr ON (p.`id_tax_rules_group` = tr.`id_tax_rules_group`													AND tr.`id_country` = '.(int)Country::getDefaultCountryId().'
+													AND tr.`id_state` = 0)
+		LEFT JOIN `'._DB_PREFIX_.'tax` t ON (t.`id_tax` = tr.`id_tax`)
+		WHERE p.id_product IN ('.implode(', ', $ids_product).') and p.id_category_default in ('.implode(', ', $subcategoryidArr).')';
+                
+		$rows = Db::getInstance(_PS_USE_SQL_SLAVE_)->ExecuteS($sql);
+                $results=array();
+                foreach($rows as $row){
+                    $results[]=Product::getProductProperties($id_lang, $row);
+                }
+		return $results;
 	}
 
 	/**

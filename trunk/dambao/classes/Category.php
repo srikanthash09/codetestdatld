@@ -807,7 +807,6 @@ class CategoryCore extends ObjectModel
 	{
 		//get idLang
 		$idLang = is_null($idLang) ? _USER_ID_LANG_ : (int)($idLang);
-
 		$categories = null;
 		$idCurrent = (int)($this->id);
 		while (true)

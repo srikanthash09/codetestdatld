@@ -1,0 +1,20 @@
+#home_category .block_content_catagory span.reduction {
+    background: url("../../../img/bg_reduction.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    height: 71px;
+    line-height: 71px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 66px;
+}
+#home_category .block_content_catagory li{
+    position: relative;
+}
+#home_category .block_content_catagory span.reduction .value{
+    margin-left: 20px;
+}

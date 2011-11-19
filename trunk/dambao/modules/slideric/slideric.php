@@ -192,9 +192,12 @@ private function _createBackup() {
 			}
 		return false;
  	}
-         function hookHome($params){
-                return $this->hookslider($params);
-         }
+     function hookHome($params){
+            return $this->hookslider($params);
+     }
+     function hookHomeCategory($params){
+            return $this->hookslider($params);
+     }
   
 }
 

@@ -1,5 +1,9 @@
- #block_slider{	
+#block_slider{	
     margin: 15px 0;
+    overflow: hidden
+ }
+#home_category #block_slider{	
+    margin: 20px 0;
     overflow: hidden
  }
 /* The Nivo Slider styles */

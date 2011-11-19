@@ -29,8 +29,8 @@ class BlockNewProduct extends Module {
             $categoryid=$_GET['id_category'];
         }
         $category = new Category($categoryid, Configuration::get('PS_LANG_DEFAULT'));    
-        $products = $category->getProducts((int)($params['cookie']->id_lang), 1,3,'date_add','DESC');
-        $smarty->assign(array('products' => $products,'homeSize' => Image::getSize('home')));
+        $products1 = $category->getProducts((int)($params['cookie']->id_lang), 1,3,'date_add','DESC');
+        $smarty->assign(array('products1' => $products1,'homeSize' => Image::getSize('home')));
         return $this->display(__FILE__, 'blocknewproduct.tpl');
     }
 

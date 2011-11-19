@@ -1,4 +1,5 @@
 <!--liempro88-->
+{if $products}
 <div class="block products_block clearfix" id="products_block_center">
 	<div id="block_title"><span>SẢN PHẨM MỚI</span></div>
 		<div class="block_content_catagory">	
@@ -13,3 +14,4 @@
 			</ul>
 		</div>	        
 </div>
+{/if}

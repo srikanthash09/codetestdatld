@@ -359,6 +359,7 @@ class ProductControllerCore extends FrontController
 	public function displayContent()
 	{
 		parent::displayContent();
+        self::$smarty->assign(array('HOOK_RIGHTPRODUCTCOLUMN'=> Module::hookExec('rightColumn', array('cart' => self::$cart)),));
 		self::$smarty->display(_PS_THEME_DIR_.'product.tpl');
 	}
 

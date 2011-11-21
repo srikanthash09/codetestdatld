@@ -169,11 +169,14 @@ class productsCategory extends Module
 		$smarty->assign(array(
 			'categoryProducts' => $categoryProducts,
 			'middlePosition' => (int)$middlePosition,
+            'rightproductSize' => Image::getSize('rightproduct'),
 			'ProdDisplayPrice' => Configuration::get('PRODUCTSCATEGORY_DISPLAY_PRICE')));
 
 		return $this->display(__FILE__, 'productscategory.tpl');
 	}
-	
+	public function hookRightcolumn($params){
+	   return $this->hookProductFooter($params);
+	}
 	public function hookHeader($params)
 	{
 		Tools::addCSS($this->_path.'productscategory.css', 'all');

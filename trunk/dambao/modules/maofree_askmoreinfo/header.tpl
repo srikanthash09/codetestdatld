@@ -1,0 +1,1 @@
+<link href="{$content_dir}modules/maofree_askmoreinfo/css/askmoreinfo_css.php" rel="stylesheet" type="text/css" media="all" />

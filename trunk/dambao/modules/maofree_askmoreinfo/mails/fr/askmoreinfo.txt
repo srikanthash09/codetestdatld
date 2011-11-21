@@ -1,0 +1,14 @@
+
+	{customer} vous a envoyé une demande de plus amples renseignements sur le produit ci-dessous.
+	
+	{product}: {product_link}
+	
+	Nom: {name}
+	
+	Email: {email}
+	
+	Message : {message}
+	
+	
+	{shop_name} - {shop_url}
+

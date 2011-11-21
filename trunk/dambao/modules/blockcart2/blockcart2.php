@@ -185,13 +185,15 @@ class BlockCart2 extends Module
 	{
 		if (Configuration::get('PS_CATALOG_MODE'))
 			return;
-
-		Tools::addCSS(($this->_path).'blockcart.css', 'all');
 		if ((int)(Configuration::get('PS_BLOCK_CART_AJAX')))
 			Tools::addJS(($this->_path).'ajax-cart.js');
 	}
 	
 	public function hookTop($params)
+	{
+		return $this->hookRightColumn($params);
+	}
+    public function hookRightproductcolumn($params)
 	{
 		return $this->hookRightColumn($params);
 	}

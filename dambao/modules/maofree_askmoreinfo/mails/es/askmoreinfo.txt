@@ -1,0 +1,14 @@
+
+	{customer} te ha enviado una petición de más información sobre el producto a continuación.
+	
+	{product}: {product_link}
+	
+	Nombre: {name}
+	
+	Email: {email}
+	
+	Mensaje : {message}
+	
+	
+	{shop_name} - {shop_url}
+

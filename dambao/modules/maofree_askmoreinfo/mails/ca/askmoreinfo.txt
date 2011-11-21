@@ -1,0 +1,14 @@
+
+	{customer} t'ha enviat una petició de més informació sobre el producte que tens a continuació.
+	
+	{product}: {product_link}
+	
+	Nom: {name}
+	
+	Email: {email}
+	
+	Missatge : {message}
+	
+	
+	{shop_name} - {shop_url}
+

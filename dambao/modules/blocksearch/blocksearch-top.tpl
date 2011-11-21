@@ -16,7 +16,7 @@
 			<div id="shopping-cart">
 				<a href="{$link->getPageLink("$order_process.php", true)}" title="{l s='Your Shopping Cart' mod='blocksearch'}">
 					<img src="{$base_dir}img/cart_top.png"/>
-					<span class="ajax_cart_quantity">Có {$cart_qties} Sản phẩm</span>
+					<span>Có </span><span class="ajax_cart_quantity">{$cart_qties}</span><span> Sản phẩm</span>
 				</a>				
 			</div>
 	</p>

@@ -24,6 +24,15 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <li id="left_share_fb">
-	<a href="http://www.facebook.com/sharer.php?u={$product_link}&t={$product_title}" target="blank">{l s='Share on Facebook' mod='blocksharefb'}</a>
+<!-- Tweet Button -->
+    <if condition="in_array($forum['forumid'], array(1,2))">
+    <else />
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="YOUR-TWITTER-USERNAME">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </if>
+<!-- / Tweet Button -->  
 </li>
+<li><g:plusone size="medium"></g:plusone></li>
+<li><iframe src="//www.facebook.com/plugins/like.php?href={$product_link}&amp;send=false&amp;layout=standard&amp;width=410&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:410px; height:35px;" allowTransparency="true"></iframe></li>
+

@@ -23,7 +23,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+ 
 {include file="$tpl_dir./errors.tpl"}
 {if $errors|@count == 0}
 <script type="text/javascript">
@@ -117,8 +117,8 @@ var fieldRequired = '{l s='Please fill in all required fields' js=1}';
 {/if}
 //]]>
 </script>
-
 {include file="$tpl_dir./breadcrumb.tpl"}
+<div id="product_column">
 <div id="primary_block" class="clearfix">
 
 	{if isset($adminActionDisplay) && $adminActionDisplay}
@@ -182,56 +182,84 @@ var fieldRequired = '{l s='Please fill in all required fields' js=1}';
 		{if isset($images) && count($images) > 3}<a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">{l s='Next'}</a>{/if}
 		</div>
 		{/if}
-		{if isset($images) && count($images) > 1}<p class="resetimg clear"><span id="wrapResetImages" style="display: none;"><img src="{$img_dir}icon/cancel_11x13.gif" alt="{l s='Cancel'}" width="11" height="13"/> <a id="resetImages" href="{$link->getProductLink($product)}" onclick="$('span#wrapResetImages').hide('slow');return (false);">{l s='Display all pictures'}</a></span></p>{/if}
-		<!-- usefull links-->
-		<ul id="usefull_link_block">
-			{if $HOOK_EXTRA_LEFT}{$HOOK_EXTRA_LEFT}{/if}
-			<li class="print"><a href="javascript:print();">{l s='Print'}</a></li>
-		</ul>
+		{if isset($images) && count($images) > 1}<p class="resetimg clear"><span id="wrapResetImages" style="display: none;"><img src="{$img_dir}icon/cancel_11x13.gif" alt="{l s='Cancel'}" width="11" height="13"/> <a id="resetImages" href="{$link->getProductLink($product)}" onclick="$('span#wrapResetImages').hide('slow');return (false);">{l s='Display all pictures'}</a></span></p>{/if}		
 	</div>
 
 	<!-- left infos-->
 	<div id="pb-left-column">
-		<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>
-	
-		{if $product->description_short OR $packItems|@count > 0}
-		<div id="short_description_block">
-			{if $product->description_short}
-				<div id="short_description_content" class="rte align_justify">{$product->description_short}</div>
-			{/if}
-			{if $product->description}
-			<p class="buttons_bottom_block"><a href="javascript:{ldelim}{rdelim}" class="button">{l s='More details'}</a></p>
-			{/if}
-			{if $packItems|@count > 0}
-				<h3>{l s='Pack content'}</h3>
-				{foreach from=$packItems item=packItem}
-					<div class="pack_content">
-						{$packItem.pack_quantity} x <a href="{$link->getProductLink($packItem.id_product, $packItem.link_rewrite, $packItem.category)}">{$packItem.name|escape:'htmlall':'UTF-8'}</a>
-						<p>{$packItem.description_short}</p>
-					</div>
-				{/foreach}
-			{/if}
-		</div>
-		{/if}
-
-		{if isset($colors) && $colors}
-		<!-- colors -->
-		<div id="color_picker">
-			<p>{l s='Pick a color:' js=1}</p>
-			<div class="clear"></div>
-			<ul id="color_to_pick_list" class="clearfix">
-			{foreach from=$colors key='id_attribute' item='color'}
-				<li><a id="color_{$id_attribute|intval}" class="color_pick" style="background: {$color.value};" onclick="updateColorSelect({$id_attribute|intval});$('#wrapResetImages').show('slow');" title="{$color.name}">{if file_exists($col_img_dir|cat:$id_attribute|cat:'.jpg')}<img src="{$img_col_dir}{$id_attribute}.jpg" alt="{$color.name}" width="20" height="20" />{/if}</a></li>
-			{/foreach}
-			</ul>
-			<div class="clear"></div>
-		</div>
-		{/if}
-
-		{if ($product->show_price AND !isset($restricted_country_mode)) OR isset($groups) OR $product->reference OR (isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS)}
+		<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>   
+        <div id="under_name">
+		  {if $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
+        </div>     
+        <div id="product_info">
+            {if ($product->show_price AND !isset($restricted_country_mode)) OR isset($groups) OR $product->reference OR (isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS)}
 		<!-- add to cart form-->
 		<form id="buy_block" {if $PS_CATALOG_MODE AND !isset($groups) AND $product->quantity > 0}class="hidden"{/if} action="{$link->getPageLink('cart.php')}" method="post">
-
+            <!-- prices -->
+			{if $product->show_price AND !isset($restricted_country_mode) AND !$PS_CATALOG_MODE}
+			<div class="price">
+				{if !$priceDisplay || $priceDisplay == 2}
+					{assign var='productPrice' value=$product->getPrice(true, $smarty.const.NULL)}
+					{assign var='productPriceWithoutRedution' value=$product->getPriceWithoutReduct(false, $smarty.const.NULL)}
+				{elseif $priceDisplay == 1}
+					{assign var='productPrice' value=$product->getPrice(false, $smarty.const.NULL)}
+					{assign var='productPriceWithoutRedution' value=$product->getPriceWithoutReduct(true, $smarty.const.NULL)}
+				{/if}
+				
+				<p class="our_price_display">
+				{if $priceDisplay >= 0 && $priceDisplay <= 2}
+					<span id="our_price_display">{convertPrice price=$productPrice}</span>
+						<!--{if $tax_enabled  && ((isset($display_tax_label) && $display_tax_label == 1) OR !isset($display_tax_label))}
+							{if $priceDisplay == 1}{l s='tax excl.'}{else}{l s='tax incl.'}{/if}
+						{/if}-->
+				{/if}
+				</p>
+				
+				{if $product->on_sale}
+					<img src="{$img_dir}onsale_{$lang_iso}.gif" alt="{l s='On sale'}" class="on_sale_img"/>
+					<span class="on_sale">{l s='On sale!'}</span>
+				{elseif $product->specificPrice AND $product->specificPrice.reduction AND $productPriceWithoutRedution > $productPrice}
+					<span class="discount">{l s='Reduced price!'}</span>
+				{/if}
+				{if $priceDisplay == 2}
+					<br />
+					<span id="pretaxe_price"><span id="pretaxe_price_display">{convertPrice price=$product->getPrice(false, $smarty.const.NULL)}</span>&nbsp;{l s='tax excl.'}</span>
+				{/if}
+			</div>
+            {if $product->specificPrice AND $product->specificPrice.reduction_type == 'percentage'}
+				<p id="reduction_percent"><span id="reduction_percent_display">-{$product->specificPrice.reduction*100}%</span></p>
+			{/if}
+			
+			{if $product->specificPrice AND $product->specificPrice.reduction}
+				<p id="old_price"><span class="bold">
+				{if $priceDisplay >= 0 && $priceDisplay <= 2}
+					{if $productPriceWithoutRedution > $productPrice}
+						<span id="old_price_display">{convertPrice price=$productPriceWithoutRedution}</span>
+							<!-- {if $tax_enabled && $display_tax_label == 1}
+								{if $priceDisplay == 1}{l s='tax excl.'}{else}{l s='tax incl.'}{/if}
+							{/if} -->
+					{/if}
+				{/if}
+				</span>
+				</p>
+			{/if}
+			{if $packItems|@count}
+				<p class="pack_price">{l s='instead of'} <span style="text-decoration: line-through;">{convertPrice price=$product->getNoPackPrice()}</span></p>
+				<br class="clear" />
+			{/if}
+			{if $product->ecotax != 0}
+				<p class="price-ecotax">{l s='include'} <span id="ecotax_price_display">{if $priceDisplay == 2}{$ecotax_tax_exc|convertAndFormatPrice}{else}{$ecotax_tax_inc|convertAndFormatPrice}{/if}</span> {l s='for green tax'}
+					{if $product->specificPrice AND $product->specificPrice.reduction}
+					<br />{l s='(not impacted by the discount)'}
+					{/if}
+				</p>
+			{/if}
+			{if !empty($product->unity) && $product->unit_price_ratio > 0.000000}
+				 {math equation="pprice / punit_price"  pprice=$productPrice  punit_price=$product->unit_price_ratio assign=unit_price}
+				<p class="unit-price"><span id="unit_price_display">{convertPrice price=$unit_price}</span> {l s='per'} {$product->unity|escape:'htmlall':'UTF-8'}</p>
+			{/if}
+			{*close if for show price*}
+			{/if}
 			<!-- hidden datas -->
 			<p class="hidden">
 				<input type="hidden" name="token" value="{$static_token}" />
@@ -239,6 +267,42 @@ var fieldRequired = '{l s='Please fill in all required fields' js=1}';
 				<input type="hidden" name="add" value="1" />
 				<input type="hidden" name="id_product_attribute" id="idCombination" value="" />
 			</p>
+            <div id="product-shop-view-detail">
+                {if $product->quantity>0}
+                <p>
+                    <span class="label-attribute">Tình trạng</span>
+                    <span class="value-attribute">:&nbsp;&nbsp;&nbsp;Còn hàng</span>
+                </p>
+                {else}
+                <p>
+                    <span class="label-attribute">Tình trạng</span>
+                    <span class="value-attribute">:&nbsp;&nbsp;&nbsp;Đang hết hàng</span>
+                </p>
+                {/if}
+                <p><span class="label-attribute">Chất lượng </span><span class="value-attribute">:&nbsp;&nbsp;&nbsp;Mới</span></p>
+                <p><span class="label-attribute">Xuất xứ </span><span class="value-attribute">:&nbsp;&nbsp;&nbsp;Hàng công ty </span></p>
+                <p><span class="label-attribute">Vận chuyển </span><span class="value-attribute">:&nbsp;&nbsp;&nbsp;Liên hệ</span></p>
+                <!-- SORT DESC -->
+        		{if $product->description_short OR $packItems|@count > 0}
+        			{if $product->description_short}
+        				<p>
+                            <span class="label-attribute">Mô tả </span>
+                            <span class="value-attribute mota">:&nbsp;&nbsp;&nbsp;{$product->description_short|strip_tags:'UTF-8'}</span>
+                        </p>
+        			{/if}
+                    <!--
+        			{if $packItems|@count > 0}
+        				<h3>{l s='Pack content'}</h3>
+        				{foreach from=$packItems item=packItem}
+        					<div class="pack_content">
+        						{$packItem.pack_quantity} x <a href="{$link->getProductLink($packItem.id_product, $packItem.link_rewrite, $packItem.category)}">{$packItem.name|escape:'htmlall':'UTF-8'}</a>
+        						<p>{$packItem.description_short}</p>
+        					</div>
+        				{/foreach}
+        			{/if}
+                    -->
+        		{/if}
+            </div>
 			
 			<div class="product_attributes">
 				{if isset($groups)}
@@ -264,8 +328,110 @@ var fieldRequired = '{l s='Please fill in all required fields' js=1}';
 
 				<!-- quantity wanted -->
 				<p id="quantity_wanted_p"{if (!$allow_oosp && $product->quantity <= 0) OR $virtual OR !$product->available_for_order OR $PS_CATALOG_MODE} style="display: none;"{/if}>
-					<label>{l s='Quantity :'}</label>
-					<input type="text" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}{if $product->minimal_quantity > 1}{$product->minimal_quantity}{else}1{/if}{/if}" size="2" maxlength="3" {if $product->minimal_quantity > 1}onkeyup="checkMinimalQuantity({$product->minimal_quantity});"{/if} />
+					<label>{l s='Chọn số lượng :'}</label>
+                    <select name="qty" class="input-text" id="quantity_wanted">
+                        <option value="1" title="Số lượng">1</option>
+                        <option value="2" title="Số lượng">2</option>
+                        <option value="3" title="Số lượng">3</option>
+                        <option value="4" title="Số lượng">4</option>
+                        <option value="5" title="Số lượng">5</option>
+                        <option value="6" title="Số lượng">6</option>
+                        <option value="7" title="Số lượng">7</option>
+                        <option value="8" title="Số lượng">8</option>
+                        <option value="9" title="Số lượng">9</option>
+                        <option value="10" title="Số lượng">10</option>
+                        <option value="11" title="Số lượng">11</option>
+                        <option value="12" title="Số lượng">12</option>
+                        <option value="13" title="Số lượng">13</option>
+                        <option value="14" title="Số lượng">14</option>
+                        <option value="15" title="Số lượng">15</option>
+                        <option value="16" title="Số lượng">16</option>
+                        <option value="17" title="Số lượng">17</option>
+                        <option value="18" title="Số lượng">18</option>
+                        <option value="19" title="Số lượng">19</option>
+                        <option value="20" title="Số lượng">20</option>
+                        <option value="21" title="Số lượng">21</option>
+                        <option value="22" title="Số lượng">22</option>
+                        <option value="23" title="Số lượng">23</option>
+                        <option value="24" title="Số lượng">24</option>
+                        <option value="25" title="Số lượng">25</option>
+                        <option value="26" title="Số lượng">26</option>
+                        <option value="27" title="Số lượng">27</option>
+                        <option value="28" title="Số lượng">28</option>
+                        <option value="29" title="Số lượng">29</option>
+                        <option value="30" title="Số lượng">30</option>
+                        <option value="31" title="Số lượng">31</option>
+                        <option value="32" title="Số lượng">32</option>
+                        <option value="33" title="Số lượng">33</option>
+                        <option value="34" title="Số lượng">34</option>
+                        <option value="35" title="Số lượng">35</option>
+                        <option value="36" title="Số lượng">36</option>
+                        <option value="37" title="Số lượng">37</option>
+                        <option value="38" title="Số lượng">38</option>
+                        <option value="39" title="Số lượng">39</option>
+                        <option value="40" title="Số lượng">40</option>
+                        <option value="41" title="Số lượng">41</option>
+                        <option value="42" title="Số lượng">42</option>
+                        <option value="43" title="Số lượng">43</option>
+                        <option value="44" title="Số lượng">44</option>
+                        <option value="45" title="Số lượng">45</option>
+                        <option value="46" title="Số lượng">46</option>
+                        <option value="47" title="Số lượng">47</option>
+                        <option value="48" title="Số lượng">48</option>
+                        <option value="49" title="Số lượng">49</option>
+                        <option value="50" title="Số lượng">50</option>
+                        <option value="51" title="Số lượng">51</option>
+                        <option value="52" title="Số lượng">52</option>
+                        <option value="53" title="Số lượng">53</option>
+                        <option value="54" title="Số lượng">54</option>
+                        <option value="55" title="Số lượng">55</option>
+                        <option value="56" title="Số lượng">56</option>
+                        <option value="57" title="Số lượng">57</option>
+                        <option value="58" title="Số lượng">58</option>
+                        <option value="59" title="Số lượng">59</option>
+                        <option value="60" title="Số lượng">60</option>
+                        <option value="61" title="Số lượng">61</option>
+                        <option value="62" title="Số lượng">62</option>
+                        <option value="63" title="Số lượng">63</option>
+                        <option value="64" title="Số lượng">64</option>
+                        <option value="65" title="Số lượng">65</option>
+                        <option value="66" title="Số lượng">66</option>
+                        <option value="67" title="Số lượng">67</option>
+                        <option value="68" title="Số lượng">68</option>
+                        <option value="69" title="Số lượng">69</option>
+                        <option value="70" title="Số lượng">70</option>
+                        <option value="71" title="Số lượng">71</option>
+                        <option value="72" title="Số lượng">72</option>
+                        <option value="73" title="Số lượng">73</option>
+                        <option value="74" title="Số lượng">74</option>
+                        <option value="75" title="Số lượng">75</option>
+                        <option value="76" title="Số lượng">76</option>
+                        <option value="77" title="Số lượng">77</option>
+                        <option value="78" title="Số lượng">78</option>
+                        <option value="79" title="Số lượng">79</option>
+                        <option value="80" title="Số lượng">80</option>
+                        <option value="81" title="Số lượng">81</option>
+                        <option value="82" title="Số lượng">82</option>
+                        <option value="83" title="Số lượng">83</option>
+                        <option value="84" title="Số lượng">84</option>
+                        <option value="85" title="Số lượng">85</option>
+                        <option value="86" title="Số lượng">86</option>
+                        <option value="87" title="Số lượng">87</option>
+                        <option value="88" title="Số lượng">88</option>
+                        <option value="89" title="Số lượng">89</option>
+                        <option value="90" title="Số lượng">90</option>
+                        <option value="91" title="Số lượng">91</option>
+                        <option value="92" title="Số lượng">92</option>
+                        <option value="93" title="Số lượng">93</option>
+                        <option value="94" title="Số lượng">94</option>
+                        <option value="95" title="Số lượng">95</option>
+                        <option value="96" title="Số lượng">96</option>
+                        <option value="97" title="Số lượng">97</option>
+                        <option value="98" title="Số lượng">98</option>
+                        <option value="99" title="Số lượng">99</option>
+                        <option value="100" title="Số lượng">100</option>
+                    </select>
+					<!--<input type="text" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}{if $product->minimal_quantity > 1}{$product->minimal_quantity}{else}1{/if}{/if}" size="2" maxlength="3" {if $product->minimal_quantity > 1}onkeyup="checkMinimalQuantity({$product->minimal_quantity});"{/if} />-->
 				</p>
 
 				<!-- minimal quantity wanted -->
@@ -305,81 +471,37 @@ var fieldRequired = '{l s='Please fill in all required fields' js=1}';
 			</div>
 
 			<div class="content_prices clearfix">
-				<!-- prices -->
-				{if $product->show_price AND !isset($restricted_country_mode) AND !$PS_CATALOG_MODE}
-				<div class="price">
-					{if !$priceDisplay || $priceDisplay == 2}
-						{assign var='productPrice' value=$product->getPrice(true, $smarty.const.NULL)}
-						{assign var='productPriceWithoutRedution' value=$product->getPriceWithoutReduct(false, $smarty.const.NULL)}
-					{elseif $priceDisplay == 1}
-						{assign var='productPrice' value=$product->getPrice(false, $smarty.const.NULL)}
-						{assign var='productPriceWithoutRedution' value=$product->getPriceWithoutReduct(true, $smarty.const.NULL)}
-					{/if}
-					
-					<p class="our_price_display">
-					{if $priceDisplay >= 0 && $priceDisplay <= 2}
-						<span id="our_price_display">{convertPrice price=$productPrice}</span>
-							<!--{if $tax_enabled  && ((isset($display_tax_label) && $display_tax_label == 1) OR !isset($display_tax_label))}
-								{if $priceDisplay == 1}{l s='tax excl.'}{else}{l s='tax incl.'}{/if}
-							{/if}-->
-					{/if}
-					</p>
-					
-					{if $product->on_sale}
-						<img src="{$img_dir}onsale_{$lang_iso}.gif" alt="{l s='On sale'}" class="on_sale_img"/>
-						<span class="on_sale">{l s='On sale!'}</span>
-					{elseif $product->specificPrice AND $product->specificPrice.reduction AND $productPriceWithoutRedution > $productPrice}
-						<span class="discount">{l s='Reduced price!'}</span>
-					{/if}
-					{if $priceDisplay == 2}
-						<br />
-						<span id="pretaxe_price"><span id="pretaxe_price_display">{convertPrice price=$product->getPrice(false, $smarty.const.NULL)}</span>&nbsp;{l s='tax excl.'}</span>
-					{/if}
-				</div>
-				{if $product->specificPrice AND $product->specificPrice.reduction_type == 'percentage'}
-					<p id="reduction_percent"><span id="reduction_percent_display">-{$product->specificPrice.reduction*100}%</span></p>
-				{/if}
 				
-				{if $product->specificPrice AND $product->specificPrice.reduction}
-					<p id="old_price"><span class="bold">
-					{if $priceDisplay >= 0 && $priceDisplay <= 2}
-						{if $productPriceWithoutRedution > $productPrice}
-							<span id="old_price_display">{convertPrice price=$productPriceWithoutRedution}</span>
-								<!-- {if $tax_enabled && $display_tax_label == 1}
-									{if $priceDisplay == 1}{l s='tax excl.'}{else}{l s='tax incl.'}{/if}
-								{/if} -->
-						{/if}
-					{/if}
-					</span>
-					</p>
-				{/if}
-				{if $packItems|@count}
-					<p class="pack_price">{l s='instead of'} <span style="text-decoration: line-through;">{convertPrice price=$product->getNoPackPrice()}</span></p>
-					<br class="clear" />
-				{/if}
-				{if $product->ecotax != 0}
-					<p class="price-ecotax">{l s='include'} <span id="ecotax_price_display">{if $priceDisplay == 2}{$ecotax_tax_exc|convertAndFormatPrice}{else}{$ecotax_tax_inc|convertAndFormatPrice}{/if}</span> {l s='for green tax'}
-						{if $product->specificPrice AND $product->specificPrice.reduction}
-						<br />{l s='(not impacted by the discount)'}
-						{/if}
-					</p>
-				{/if}
-				{if !empty($product->unity) && $product->unit_price_ratio > 0.000000}
-					 {math equation="pprice / punit_price"  pprice=$productPrice  punit_price=$product->unit_price_ratio assign=unit_price}
-					<p class="unit-price"><span id="unit_price_display">{convertPrice price=$unit_price}</span> {l s='per'} {$product->unity|escape:'htmlall':'UTF-8'}</p>
-				{/if}
-				{*close if for show price*}
-				{/if}
 				
-				<p{if (!$allow_oosp && $product->quantity <= 0) OR !$product->available_for_order OR (isset($restricted_country_mode) AND $restricted_country_mode) OR $PS_CATALOG_MODE} style="display: none;"{/if} id="add_to_cart" class="buttons_bottom_block"><span></span><input type="submit" name="Submit" value="{l s='Add to cart'}" class="exclusive" /></p>
-				
+								
+				<p id="muangay"><span></span><input type="submit" name="Submit" value="{l s='MUA NGAY'}" class="exclusive" /></p>
+                <p{if (!$allow_oosp && $product->quantity <= 0) OR !$product->available_for_order OR (isset($restricted_country_mode) AND $restricted_country_mode) OR $PS_CATALOG_MODE} style="display: none;"{/if} id="add_to_cart" class="buttons_bottom_block"><span></span><input type="submit" name="Submit" value="{l s='CHO VÀO GIỎ HÀNG'}" class="exclusive" /></p>
+                
 				{if isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS}{$HOOK_PRODUCT_ACTIONS}{/if}
 				
 				<div class="clear"></div>
 			</div>
 			</form>
-			{/if}
-		{if $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
+			{/if}  
+            <!-- usefull links-->
+    		<ul id="usefull_link_block">
+    			{if $HOOK_EXTRA_LEFT}{$HOOK_EXTRA_LEFT}{/if}
+    		</ul>          
+        </div>
+
+		{if isset($colors) && $colors}
+		<!-- colors -->
+		<div id="color_picker">
+			<p>{l s='Pick a color:' js=1}</p>
+			<div class="clear"></div>
+			<ul id="color_to_pick_list" class="clearfix">
+			{foreach from=$colors key='id_attribute' item='color'}
+				<li><a id="color_{$id_attribute|intval}" class="color_pick" style="background: {$color.value};" onclick="updateColorSelect({$id_attribute|intval});$('#wrapResetImages').show('slow');" title="{$color.name}">{if file_exists($col_img_dir|cat:$id_attribute|cat:'.jpg')}<img src="{$img_col_dir}{$id_attribute}.jpg" alt="{$color.name}" width="20" height="20" />{/if}</a></li>
+			{/foreach}
+			</ul>
+			<div class="clear"></div>
+		</div>
+		{/if}
 	</div>
 </div>
 
@@ -552,4 +674,8 @@ var fieldRequired = '{l s='Please fill in all required fields' js=1}';
 {/if}
 
 {/if}
+</div>
+<div id="right_productcolumn">
+    {$HOOK_RIGHTPRODUCTCOLUMN}
+</div>
 

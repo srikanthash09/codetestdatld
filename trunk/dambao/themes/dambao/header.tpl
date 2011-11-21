@@ -31,7 +31,7 @@
 	<script type="text/javascript" src="{$js_uri}"></script>
 	{/foreach}
 {/if}
-		{$HOOK_HEADER}
+		{$HOOK_HEADER}       
 	</head>
 	<!--Toppage-->
 	 <div id="tophead">

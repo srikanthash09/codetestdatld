@@ -7,8 +7,3 @@
     <div id="center_column" class=" grid_5">
         {$HOOK_HOME}
     </div>
-
-    <!-- Right -->
-    <div id="right_column" class="column grid_2 omega">
-            {$HOOK_RIGHT_COLUMN}
-    </div>

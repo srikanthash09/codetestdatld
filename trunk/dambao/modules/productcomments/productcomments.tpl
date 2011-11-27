@@ -62,33 +62,22 @@
 		</div>
 	{/if}
 	<div class="clear table_block">
-		<table class="std" style="width: 100%">
-			<thead>
-				<tr>
-					<th class="first_item" style="width:80px;">{l s='From' mod='productcomments'}</th>
-					<th class="item">{l s='Title' mod='productcomments'}</th>
-					<th class="item">{l s='Comment' mod='productcomments'}</th>
-				</tr>
-			</thead>
-			<tbody>
-			{foreach from=$comments item=comment}
-				{if $comment.content}
-				<tr>
-					<td style="vertical-align:top">
-						{dateFormat date=$comment.date_add|escape:'html':'UTF-8' full=0}
-						{$comment.customer_name|escape:'html':'UTF-8'}.
-					</td>
-					<td style="vertical-align:top">
-						{$comment.title}
-					</td>
-					<td style="vertical-align: top">
-						{$comment.content|escape:'html':'UTF-8'|nl2br}
-					</td>
-				</tr>
-				{/if}
-			{/foreach}
-			</tbody>
-		</table>
+		{foreach from=$comments item=comment}
+			{if $comment.content}
+			<div>
+				<div style="vertical-align:top">
+					{dateFormat date=$comment.date_add|escape:'html':'UTF-8' full=0}
+					{$comment.customer_name|escape:'html':'UTF-8'}.
+				</div>
+				<div style="vertical-align:top">
+					{$comment.title}
+				</div>
+				<div style="vertical-align: top">
+					{$comment.content|escape:'html':'UTF-8'|nl2br}
+				</div>
+			</div>
+			{/if}
+		{/foreach}
 	</div>
 {else}
 	<p class="align_center">{l s='No customer comments for the moment.' mod='productcomments'}</p>

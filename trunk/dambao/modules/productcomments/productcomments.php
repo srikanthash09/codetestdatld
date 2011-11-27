@@ -485,7 +485,35 @@ class ProductComments extends Module
 			$this->_html .= '</fieldset>';
 		}
 	}
-	
+	public function hookRightcolumn($params){
+	   global $smarty, $cookie;
+
+		$id_guest = (!$id_customer = (int)$cookie->id_customer) ? (int)$cookie->id_guest : false;
+		$customerComment = ProductComment::getByCustomer((int)(Tools::getValue('id_product')), (int)$cookie->id_customer, true, (int)$id_guest);
+		
+		$averages = ProductComment::getAveragesByProduct((int)Tools::getValue('id_product'), (int)$cookie->id_lang);
+		$averageTotal = 0;
+		foreach ($averages AS $average)
+			$averageTotal += (float)($average);
+		$averageTotal = count($averages) ? ($averageTotal / count($averages)) : 0;
+		
+		$smarty->assign(array(
+		'logged' => (int)$cookie->id_customer,
+		'action_url' => '',
+		'comments' => ProductComment::getByProduct((int)Tools::getValue('id_product')),
+		'criterions' => ProductCommentCriterion::getByProduct((int)Tools::getValue('id_product'), (int)$cookie->id_lang),
+		'averages' => $averages,
+		'product_comment_path' => $this->_path,
+		'averageTotal' => $averageTotal,
+		'allow_guests' => (int)Configuration::get('PRODUCT_COMMENTS_ALLOW_GUESTS'),
+		'too_early' => ($customerComment AND (strtotime($customerComment['date_add']) + Configuration::get('PRODUCT_COMMENTS_MINIMAL_TIME')) > time()),
+		'delay' => Configuration::get('PRODUCT_COMMENTS_MINIMAL_TIME')));
+
+		$controller = new FrontController();
+		$controller->pagination((int)ProductComment::getCommentNumber((int)Tools::getValue('id_product')));
+		
+		return ($this->display(__FILE__, '/rightcolumn_comment.tpl'));
+	}
 	public function hookProductTab($params)
     {
 		global $smarty, $cookie;

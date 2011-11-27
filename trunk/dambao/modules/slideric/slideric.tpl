@@ -45,6 +45,6 @@ $(window).load(function() {
 
 {/literal}
     <div id="qc_right_top">
-	<img src="{$base_dir}img/qc/qc_right_home.jpg" width="300" height="250" />
+	<img src="{$base_dir}img/qc/banner-dong.gif" width="300" height="250" />
     </div>
 </div>

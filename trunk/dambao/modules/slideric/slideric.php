@@ -10,38 +10,23 @@ class slideric extends Module
  	function __construct()
  	{
  	 	$this->name = 'slideric';
-		$this->tab = 'front_office_features';
+		$this->tab = 'Home';
  	 	$this->version = '2.0';
-		$this->author = 'Prestashopic.com';
 
 		/* The parent construct is required for translations */
 	 	parent::__construct();
 
 		$this->page = basename(__FILE__, '.php');
-	 	$this->displayName = $this->l('JQuery Nivo Slider');
+	 	$this->displayName = $this->l('Slideric - JQuery Nivo Slider');
 	 	$this->description = $this->l('Slide the images with choosen languages | Prestashopic.com');
  	}
 
     function install()
     {
-        if (!parent::install() || !$this->_createBackup())
+        if (!parent::install() OR !$this->registerHook('Home'))
             return false;
-			$hooked = Db::getInstance()->ExecuteS('SELECT * FROM `'._DB_PREFIX_.'hook` WHERE name = "slider"');
-		if (!is_array($hooked) || sizeof($hooked) == 0)
-			Db::getInstance()->Execute('INSERT INTO `'._DB_PREFIX_.'hook` (
-			`id_hook` ,`name` ,`title` ,`description` ,`position`)
-			VALUES (NULL , "slider", "sliderHome", "slider hompage", "1");');
-		if (!$this->registerHook('slider') )
-			
-			return false;
         return true;
     }
-
-private function _createBackup() {
-		
-	@copy(_PS_MODULE_DIR_ . $this->name . '/FrontController.php', _PS_ROOT_DIR_ . '/override/classes/FrontController.php');
-		return true;
-	}
 
 	function putContent($xml_data, $key, $field)
 	{
@@ -171,7 +156,7 @@ private function _createBackup() {
 			</form>';
  	}
 
-	function hookslider($params)
+ 	function hookHome($params)
  	{
         global $cookie;
         /* Languages preliminaries */
@@ -192,12 +177,6 @@ private function _createBackup() {
 			}
 		return false;
  	}
-     function hookHome($params){
-            return $this->hookslider($params);
-     }
-     function hookHomeCategory($params){
-            return $this->hookslider($params);
-     }
   
 }
 

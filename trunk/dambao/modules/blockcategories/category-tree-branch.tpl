@@ -16,7 +16,7 @@
 				{foreach from=$products.{$node.id} item=product name=count}
 				    <div class="ca_item {if $smarty.foreach.count.first}first{elseif $smarty.foreach.count.iteration==2}first{/if}">
 					<a class="product_image" title="{$product.name}" href="{$product.link}"><img height="75" width="75" alt="iPod Nano" src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'listcate')}"/></a>
-					<p class="price_container"><span class="price">{if !$priceDisplay}{$product.price}{else}{$product.price_tax_exc}{/if} đ</span></p>
+					<p class="price_container"><span class="price">{if !$priceDisplay}{$product.price|number_format:0:".":","}{else}{$product.price_tax_exc|number_format:0:".":","}{/if} đ</span></p>
 				    </div>
 				 {/foreach}
 			</div>

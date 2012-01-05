@@ -18,10 +18,14 @@ class BlockReducePriceProducts extends Module {
     }
 
     public function install() {
-        if (parent::install() == false OR !$this->registerHook('homecategory'))
+        if (parent::install() == false OR !$this->registerHook('homecategory') and $this->registerHook('header'))
             return false;
         return true;
     }
+    public function uninstall()
+	{
+		return parent::uninstall();
+	}
 
     function hookHomeCategory($params){
         global $smarty;

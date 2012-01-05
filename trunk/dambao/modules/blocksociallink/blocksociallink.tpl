@@ -9,8 +9,8 @@
             <span class="sociallink-title">Theo dõi</span><br />
 
             <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/facebook-icon.png" width="67" height="16" /></a></span><br/>
-                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/twitter-icon.png" width="67" height="16" /></a></span><br/>
-                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/youtube-icon.png" width="67" height="16" /></a></span>
+                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/twitter-icon.png" width="55" height="18" /></a></span><br/>
+                <span class="sociallink-linkblock"><a href="#"><img src="{$base_dir}img/bg/youtube-icon.png" width="60" height="16" /></a></span>
 
         </div>
     </div>

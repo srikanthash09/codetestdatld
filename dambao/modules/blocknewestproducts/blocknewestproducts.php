@@ -29,6 +29,9 @@ class BlockNewestProducts extends Module {
         $smarty->assign(array('products' => $products,'homeSize' => Image::getSize('home')));
         return $this->display(__FILE__, 'blocknewestproducts.tpl');
     }
+    function hookHomeCategory($params){
+        return $this->hookHome($params);
+    }
 
 }
 

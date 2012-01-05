@@ -115,6 +115,9 @@ class BlockNewProducts extends Module
 	{
 		Tools::addCSS(($this->_path).'blocknewproducts.css', 'all');
 	}
+        public function hookHomeCategory($params){
+           return $this->hookRightColumn($params);
+        }
 
 }
 

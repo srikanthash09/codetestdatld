@@ -31,6 +31,7 @@ class BlockNewProductCatagories extends Module {
         for($i=0;$i<$number_categorydisplay;$i++){
             $categorydisplay[]=$categories[$i];
         }
+        //var_dump($categorydisplay);
         foreach ($categorydisplay as $cate){
             $category = new Category($cate[id_category], Configuration::get('PS_LANG_DEFAULT'));
             $nb = (int)(Configuration::get('HOME_FEATURED_NBR'));
